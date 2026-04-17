@@ -1,0 +1,242 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 25.03.2026 09:55:23
+// Design Name: 
+// Module Name: plic_top
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+// ============================================================
+// TOPS SoC - PLIC (Platform Level Interrupt Controller)
+// PSG College of Technology | VEDA Project
+// Base Address : 0x0C00_0000
+// Sources      : 12  (IRQ IDs 1-12)
+// Harts        : 1   (Hart 0)
+// Interface    : AXI4-Lite 32-bit
+// ============================================================
+module plic_top #(
+    parameter int N_SOURCE   = 12,   // number of interrupt sources
+    parameter int N_TARGET   = 1,    // number of harts
+    parameter int PRIO_BITS  = 3     // bits per priority field
+)(
+    input  logic        clk_i,
+    input  logic        rst_ni,
+
+    // Interrupt source inputs (1-indexed; [0] unused per PLIC spec)
+    input  logic [N_SOURCE:0] intr_src_i,
+
+    // AXI4-Lite slave interface
+    input  logic [31:0] s_axi_awaddr,
+    input  logic        s_axi_awvalid,
+    output logic        s_axi_awready,
+    input  logic [31:0] s_axi_wdata,
+    input  logic [3:0]  s_axi_wstrb,
+    input  logic        s_axi_wvalid,
+    output logic        s_axi_wready,
+    output logic [1:0]  s_axi_bresp,
+    output logic        s_axi_bvalid,
+    input  logic        s_axi_bready,
+    input  logic [31:0] s_axi_araddr,
+    input  logic        s_axi_arvalid,
+    output logic        s_axi_arready,
+    output logic [31:0] s_axi_rdata,
+    output logic [1:0]  s_axi_rresp,
+    output logic        s_axi_rvalid,
+    input  logic        s_axi_rready,
+
+    // Interrupt output to RISC-V core (one per hart)
+    output logic [N_TARGET-1:0] irq_o
+);
+
+    // ── Register File ─────────────────────────────────────────
+    // Priority registers: one per source (offset 0x4 * source_id)
+    logic [PRIO_BITS-1:0] priority_reg [1:N_SOURCE];
+
+    // Pending register (read-only, set by hardware)
+    logic [N_SOURCE:0] pending_reg;
+
+    // Enable register for Hart 0 (offset 0x2000)
+    logic [N_SOURCE:0] enable_reg;
+
+    // Threshold register for Hart 0 (offset 0x200000)
+    logic [PRIO_BITS-1:0] threshold_reg;
+
+    // Claim/Complete register for Hart 0 (offset 0x200004)
+    logic [4:0] claim_reg;
+
+    // ── Pending Logic ─────────────────────────────────────────
+    // A source becomes pending on rising edge of its interrupt
+    logic [N_SOURCE:0] intr_src_q;
+    always_ff @(posedge clk_i or negedge rst_ni) begin
+        if (!rst_ni) begin
+            intr_src_q  <= '0;
+            pending_reg <= '0;
+        end else begin
+            intr_src_q <= intr_src_i;
+            for (int i = 1; i <= N_SOURCE; i++) begin
+                // Set pending on rising edge
+                if (intr_src_i[i] && !intr_src_q[i])
+                    pending_reg[i] <= 1'b1;
+                // Clear pending when CPU completes (claim_reg write)
+                else if (claim_reg == i[4:0] && axi_wr_en &&
+                         wr_addr == 32'h0020_0004)
+                    pending_reg[i] <= 1'b0;
+            end
+        end
+    end
+
+    // ── Priority Arbitration ──────────────────────────────────
+    // Find highest priority pending+enabled interrupt above threshold
+    logic [4:0]          best_id;
+    logic [PRIO_BITS-1:0] best_prio;
+
+    always_comb begin
+        best_id   = 5'h0;
+        best_prio = threshold_reg;
+        for (int i = 1; i <= N_SOURCE; i++) begin
+            if (pending_reg[i] && enable_reg[i] &&
+                (priority_reg[i] > best_prio)) begin
+                best_prio = priority_reg[i];
+                best_id   = i[4:0];
+            end
+        end
+    end
+
+    assign irq_o[0] = (best_id != 5'h0);
+
+    // ── AXI4-Lite Write Logic ─────────────────────────────────
+    logic        axi_wr_en;
+    logic [31:0] wr_addr;
+    logic [31:0] wr_data;
+
+    typedef enum logic [1:0] {
+        WR_IDLE, WR_ADDR, WR_DATA, WR_RESP
+    } wr_state_t;
+    wr_state_t wr_state;
+
+    always_ff @(posedge clk_i or negedge rst_ni) begin
+        if (!rst_ni) begin
+            wr_state       <= WR_IDLE;
+            s_axi_awready  <= 1'b0;
+            s_axi_wready   <= 1'b0;
+            s_axi_bvalid   <= 1'b0;
+            s_axi_bresp    <= 2'b00;
+            axi_wr_en      <= 1'b0;
+            wr_addr        <= '0;
+            wr_data        <= '0;
+            // Reset all registers
+            for (int i = 1; i <= N_SOURCE; i++)
+                priority_reg[i] <= '0;
+            enable_reg    <= '0;
+            threshold_reg <= '0;
+            claim_reg     <= '0;
+        end else begin
+            axi_wr_en     <= 1'b0;
+            case (wr_state)
+                WR_IDLE: begin
+                    s_axi_awready <= 1'b1;
+                    s_axi_wready  <= 1'b1;
+                    if (s_axi_awvalid && s_axi_wvalid) begin
+                        wr_addr       <= s_axi_awaddr;
+                        wr_data       <= s_axi_wdata;
+                        s_axi_awready <= 1'b0;
+                        s_axi_wready  <= 1'b0;
+                        axi_wr_en     <= 1'b1;
+                        wr_state      <= WR_RESP;
+                        // Decode write address
+                        // Priority registers: 0x000004 + 4*(id-1)
+                        for (int i = 1; i <= N_SOURCE; i++) begin
+                            if (s_axi_awaddr == (32'h4*(i)))
+                                priority_reg[i] <= s_axi_wdata[PRIO_BITS-1:0];
+                        end
+                        // Enable register: 0x002000
+                        if (s_axi_awaddr == 32'h0000_2000)
+                            enable_reg <= s_axi_wdata[N_SOURCE:0];
+                        // Threshold: 0x200000
+                        if (s_axi_awaddr == 32'h0020_0000)
+                            threshold_reg <= s_axi_wdata[PRIO_BITS-1:0];
+                        // Complete: 0x200004
+                        if (s_axi_awaddr == 32'h0020_0004)
+                            claim_reg <= s_axi_wdata[4:0];
+                    end
+                end
+                WR_RESP: begin
+                    s_axi_bvalid <= 1'b1;
+                    if (s_axi_bready) begin
+                        s_axi_bvalid <= 1'b0;
+                        wr_state     <= WR_IDLE;
+                    end
+                end
+                default: wr_state <= WR_IDLE;
+            endcase
+        end
+    end
+
+    // ── AXI4-Lite Read Logic ──────────────────────────────────
+    typedef enum logic [1:0] {
+        RD_IDLE, RD_DATA
+    } rd_state_t;
+    rd_state_t rd_state;
+
+    always_ff @(posedge clk_i or negedge rst_ni) begin
+        if (!rst_ni) begin
+            rd_state       <= RD_IDLE;
+            s_axi_arready  <= 1'b0;
+            s_axi_rvalid   <= 1'b0;
+            s_axi_rdata    <= '0;
+            s_axi_rresp    <= 2'b00;
+        end else begin
+            case (rd_state)
+                RD_IDLE: begin
+                    s_axi_arready <= 1'b1;
+                    if (s_axi_arvalid) begin
+                        s_axi_arready <= 1'b0;
+                        rd_state      <= RD_DATA;
+                        // Decode read address
+                        s_axi_rdata <= 32'h0;
+                        // Priority registers
+                        for (int i = 1; i <= N_SOURCE; i++) begin
+                            if (s_axi_araddr == (32'h4*(i)))
+                                s_axi_rdata <= 32'(priority_reg[i]);
+                        end
+                        // Pending: 0x001000
+                        if (s_axi_araddr == 32'h0000_1000)
+                            s_axi_rdata <= 32'(pending_reg);
+                        // Enable: 0x002000
+                        if (s_axi_araddr == 32'h0000_2000)
+                            s_axi_rdata <= 32'(enable_reg);
+                        // Threshold: 0x200000
+                        if (s_axi_araddr == 32'h0020_0000)
+                            s_axi_rdata <= 32'(threshold_reg);
+                        // Claim: 0x200004 - returns best pending IRQ id
+                        if (s_axi_araddr == 32'h0020_0004)
+                            s_axi_rdata <= 32'(best_id);
+                    end
+                end
+                RD_DATA: begin
+                    s_axi_rvalid <= 1'b1;
+                    if (s_axi_rready) begin
+                        s_axi_rvalid <= 1'b0;
+                        rd_state     <= RD_IDLE;
+                    end
+                end
+                default: rd_state <= RD_IDLE;
+            endcase
+        end
+    end
+
+endmodule
