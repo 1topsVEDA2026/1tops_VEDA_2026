@@ -5,7 +5,7 @@
 The implemented design is a 3-stage pipelined processor based on the RISC-V architecture. The processor includes support for Control and Status Register (CSR) operations, interrupt handling, and hazard control to ensure proper pipeline operation.
 
 ## Design Diagram
-[Design Digaram of the Processor](https://drive.google.com/file/d/1-Jaxc-ljJdYGSnKBGZLWKSZPSmyyhVD9/view?usp=sharing)
+[Design Digaram of the Processor](https://drive.google.com/file/d/1xiSx3B3nSmABCEcIh2hZstNkvYwaaUT3/view?usp=sharing)
 
 ## Architecture Overview
 
