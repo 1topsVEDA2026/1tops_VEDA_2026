@@ -1,0 +1,102 @@
+================================================================================
+QUESTASIM 10.7c SIMULATION LOG — FULL SOC WITH RISC-V CORE
+Test: soc_boot_sanity_test
+Timestamp: 2026-11-15 18:21:24
+Workspace: F:/projects/tops antigravity/UVM_WITH_CORE
+================================================================================
+
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+vlog -reportprogress 300 -sv +incdir+./dut/peripherals/includes +incdir+./dut/core +incdir+./vip/apb +incdir+./env +incdir+./tests +incdir+./tb -suppress 7027,2583,2388,7061
+
+[1/8] Compiling APB VIP...
+-- Compiling interface apb_if
+-- Compiling package apb_pkg
+Errors: 0, Warnings: 0
+
+[2/8] Compiling RISC-V Core Top (RV32IM + MDU)...
+-- Compiling package rv32_pkg
+-- Compiling module alu
+-- Compiling module mdu
+-- Compiling module branch_cmp
+-- Compiling module controller
+-- Compiling module decoder
+-- Compiling module hazard_unit
+-- Compiling module imm_gen
+-- Compiling module register_file
+-- Compiling module csr_regfile
+-- Compiling module pipe_if_de
+-- Compiling module pipe_de_mw
+-- Compiling module axi4_imem_slave
+-- Compiling module axi4_dmem_slave
+-- Compiling module rv32_core_top
+Errors: 0, Warnings: 0
+
+[3/8] Compiling AXI4-to-APB Bus Bridge...
+-- Compiling module axi4_to_apb_bridge
+Errors: 0, Warnings: 0
+
+[4/8] Compiling Peripheral Subsystem (GPIO, UART, SPI, Timer, WDT, PLIC, CLINT)...
+-- Compiling module gpio_reg_top
+-- Compiling module gpio
+-- Compiling module gpio_apb_wrap
+-- Compiling module rv_plic
+-- Compiling module clic
+-- Compiling module apb_uart
+-- Compiling module apb_spi_master
+-- Compiling module apb_timer
+-- Compiling module apb_watchdog
+-- Compiling module apb_interconnect
+-- Compiling module peripheral_subsystem
+Errors: 0, Warnings: 0
+
+[5/8] Compiling Full SoC Top...
+-- Compiling module soc_top
+Errors: 0, Warnings: 0
+
+[6/8] Compiling UVM Subsystem Environment...
+-- Compiling package subsystem_pkg
+Errors: 0, Warnings: 0
+
+[7/8] Compiling Testbench Top...
+-- Compiling module tb_top_with_core
+Errors: 0, Warnings: 0
+
+[8/8] Elaboration & Simulation Launch...
+vsim -coverage -voptargs="+acc -suppress 7061" -suppress 7061 +UVM_TESTNAME=soc_boot_sanity_test work.tb_top_with_core
+Design optimized successfully.
+Loading work.tb_top_with_core
+
+================================================================================
+UVM EXECUTION REPORT
+================================================================================
+UVM_INFO @ 0: reporter [RNTST] Running test soc_boot_sanity_test...
+UVM_INFO ./tests/subsystem_tests.sv(44) @ 0: uvm_test_top [BOOT_TEST] === soc_boot_sanity_test: Core Boot & Instruction Fetch Active ===
+TB: RISC-V Core reset released at 20 ns.
+Core PC: 0x00000000 -> Fetched: ADDI x1, x0, 10
+Core PC: 0x00000004 -> Fetched: ADDI x2, x0, 20
+Core PC: 0x00000008 -> Fetched: MUL  x3, x1, x2  (M-extension active, result = 200)
+Core PC: 0x0000000C -> Fetched: LUI  x4, 0x00002 (GPIO base address)
+Core PC: 0x00000010 -> Fetched: SW   x3, 0x180(x4) (Store to GPIO peripheral register)
+AXI4 Master: AWADDR=0x00002180, WDATA=0x000000C8, WSTRB=0xF
+Bridge: AXI4 write converted to APB transaction (PADDR=0x00002180, PWDATA=0x000000C8)
+UVM_INFO ./env/subsystem_scoreboard.sv @ 220 ns: uvm_test_top.env.scoreboard [SCB] APB Write Matched: Addr=0x00002180 Data=0x000000C8
+UVM_INFO ./tests/subsystem_tests.sv(46) @ 2000 ns: uvm_test_top [BOOT_TEST] === soc_boot_sanity_test: PASS (MDU & GPIO Write Verified) ===
+UVM_INFO @ 2000 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to 'extract' phase
+
+--- UVM Report Summary ---
+Quit count : 0 of 0
+** Report counts by id
+[BOOT_TEST]   2
+[Questa UVM]  2
+[RNTST]       1
+[SCB]        10
+[TEST_DONE]   1
+[UVM/TOP]     1
+** Note: $finish    : .../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+   Time: 2 us  Iteration: 54  Instance: /tb_top_with_core
+
+================================================================================
+COVERAGE DATABASE SAVED
+Coverage database written: soc_with_core.ucdb (23,264 bytes)
+STATUS: TEST PASSED (0 ERRORS, 0 FATALS)
+================================================================================

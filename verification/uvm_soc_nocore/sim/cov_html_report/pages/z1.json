@@ -1,0 +1,35 @@
+var g_data = {
+z805:{prod:'Questa',reporttype:'in',scopes:[{s:'803',b:'1',val:'tb_soc_no_core_top_sv_unit'},{link:'z.htm?f=1&s=805',val:'soc_no_core_coverage'}],lang:'SystemVerilog',src:{z:'../env/soc_no_core_coverage.sv'},summaryTables:{loctable:{
+headers:['Coverage Type', 'Bins', 'Hits', 'Misses', 'Weight', '% Hit', 'Coverage'],
+totalhits:{class:'odd_r', val:'80.76%'},avgw:{class:'bgYellow', val:'81.42%'},
+data:[
+{link:{class:'odd',val:'g.htm?f=1&s=805,Covergroups'},tb:{class:'odd_r', val:'52'},cb:{class:'odd_r', val:'42'},ms:{class:'odd_r', val:'10'},wt:{class:'odd_r', val:'1'},hp:{class:'odd_r', val:'80.76%'},cp:{class:'bgYellow', val:'81.42%'}}
+]
+}
+}
+},
+z803:{prod:'Questa',reporttype:'in',scopes:[{link:'z.htm?f=1&s=803',val:'tb_soc_no_core_top_sv_unit'}],du:{val:'work.tb_soc_no_core_top_sv_unit',link:'z.htm?f=1&s=803'},lang:'SystemVerilog',src:{z:'../tb/tb_soc_no_core_top.sv'},summaryTables:{
+headers:['Cvg'],
+instances:[{parent:'0',ln:'TOTAL',covs:[{class:'bgYellow', val:'81.42'},{class:'bgYellow', val:'81.42'}]},
+{parent:'0',ln:'tb_soc_no_core_top_sv_unit',covs:[{class:'bgYellow', val:'81.42'},{class:'bgYellow', val:'81.42'}]},
+{parent:'1',link:'z.htm?f=1&s=805',ln:'soc_no_core_coverage',covs:[{class:'bgYellow', val:'81.42'},{class:'bgYellow', val:'81.42'}]},
+]
+,loctable:{
+headers:['Coverage Type', 'Bins', 'Hits', 'Misses', 'Weight', '% Hit', 'Coverage'],
+totalhits:{class:'odd_r', val:'80.76%'},avgw:{class:'bgYellow', val:'81.42%'},
+data:[
+{link:{class:'odd',val:'Covergroups'},tb:{class:'odd_r', val:'52'},cb:{class:'odd_r', val:'42'},ms:{class:'odd_r', val:'10'},wt:{class:'odd_r', val:'1'},hp:{class:'odd_r', val:'80.76%'},cp:{class:'bgYellow', val:'81.42%'}}
+]
+}
+,rectable:{
+headers:['Coverage Type', 'Bins', 'Hits', 'Misses', 'Weight', '% Hit', 'Coverage'],
+totalhits:{class:'odd_r', val:'80.76%'},avgw:{class:'bgYellow', val:'81.42%'},
+data:[
+{link:{class:'odd',val:'Covergroups'},tb:{class:'odd_r', val:'52'},cb:{class:'odd_r', val:'42'},ms:{class:'odd_r', val:'10'},wt:{class:'odd_r', val:'1'},hp:{class:'odd_r', val:'80.76%'},cp:{class:'bgYellow', val:'81.42%'}}
+]
+}
+}
+},
+dummyEnd:0
+};
+processSummaryData(g_data);

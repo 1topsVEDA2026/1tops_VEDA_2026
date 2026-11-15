@@ -1,0 +1,2 @@
+../env/soc_no_core_coverage.sv
+../tb/tb_soc_no_core_top.sv

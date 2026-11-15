@@ -1,0 +1,5 @@
+var g_db_data = [
+{dummy:0},
+{name:'cg_soc_axi',f:1,type:6,id:806,tb:'29',h:'29',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/tb_soc_no_core_top_sv_unit/soc_no_core_coverage',parent:'805'},
+{name:'cg_field_coverage',f:1,type:6,id:814,tb:'23',h:'13',m:'10',hp:'56.52%',cov:['62.85%','Y'],g:'100.00%',gp:['62.85%','Y'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/tb_soc_no_core_top_sv_unit/soc_no_core_coverage',parent:'805'}];
+processConsCovergroupsData(g_db_data);
