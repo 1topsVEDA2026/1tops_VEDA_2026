@@ -1,0 +1,1165 @@
+Reading pref.tcl
+
+# 2022.4
+
+# set ::test_name subsystem_base_test
+# subsystem_base_test
+#  do run_questa.do
+# 
+# Allow test name override: vsim ... -G test_name=soc_mext_test
+# if {![info exists ::test_name]} {
+#     set ::test_name "soc_boot_sanity_test"
+# }
+# 
+# Clean and create work library
+# if {[file exists work]} {
+#     vdel -lib work -all
+# }
+# vlib work
+# vmap work work
+# QuestaSim vmap 2022.4 Lib Mapping Utility 2022.10 Oct 18 2022
+# vmap work work 
+# Modifying modelsim.ini
+# 
+# Global Include Directories
+# set INC_FLAGS "+incdir+./dut/peripherals/includes \
+#                +incdir+./dut/peripherals/includes/apb \
+#                +incdir+./dut/peripherals/includes/common_cells \
+#                +incdir+./dut/peripherals/includes/register_interface \
+#                +incdir+./dut/peripherals/includes/obi \
+#                +incdir+./dut/core \
+#                +incdir+./vip/apb \
+#                +incdir+./vip/axi \
+#                +incdir+./env \
+#                +incdir+./tests \
+#                +incdir+./tb \
+#                +incdir+./dut/peripherals/Peripherals/GPIO \
+#                +incdir+./dut/peripherals/Peripherals/PLIC \
+#                +incdir+./dut/peripherals/Peripherals/CLINT \
+#                +incdir+./dut/peripherals/Peripherals/UART \
+#                +incdir+./dut/peripherals/Peripherals/SPI \
+#                +incdir+./dut/peripherals/Peripherals/TIMER \
+#                +incdir+./dut/peripherals/Peripherals/WDT \
+#                -suppress 7027,2583"
+# +incdir+./dut/peripherals/includes  +incdir+./dut/peripherals/includes/apb  +incdir+./dut/peripherals/includes/common_cells  +incdir+./dut/peripherals/includes/register_interface  +incdir+./dut/peripherals/includes/obi  +incdir+./dut/core  +incdir+./vip/apb  +incdir+./vip/axi  +incdir+./env  +incdir+./tests  +incdir+./tb  +incdir+./dut/peripherals/Peripherals/GPIO  +incdir+./dut/peripherals/Peripherals/PLIC  +incdir+./dut/peripherals/Peripherals/CLINT  +incdir+./dut/peripherals/Peripherals/UART  +incdir+./dut/peripherals/Peripherals/SPI  +incdir+./dut/peripherals/Peripherals/TIMER  +incdir+./dut/peripherals/Peripherals/WDT  -suppress 7027,2583
+# 
+# echo "=========================================================="
+# ==========================================================
+# echo " Step 1: Compiling RISC-V Core RTL..."
+#  Step 1: Compiling RISC-V Core RTL...
+# echo "=========================================================="
+# ==========================================================
+# 
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/rv32_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/rv32_pkg.sv 
+# -- Compiling package rv32_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/alu.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/alu.sv 
+# -- Compiling module alu
+# -- Importing package rv32_pkg
+# 
+# Top level modules:
+# 	alu
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/booth_multiplier_radix4.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/booth_multiplier_radix4.sv 
+# -- Compiling module booth_multiplier_radix4
+# 
+# Top level modules:
+# 	booth_multiplier_radix4
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0, Suppressed Warnings: 13
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/mdu.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/mdu.sv 
+# -- Compiling module mdu
+# -- Importing package rv32_pkg
+# 
+# Top level modules:
+# 	mdu
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/branch_cmp.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/branch_cmp.sv 
+# -- Compiling module branch_cmp
+# -- Importing package rv32_pkg
+# 
+# Top level modules:
+# 	branch_cmp
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/controller.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/controller.sv 
+# -- Compiling module controller
+# -- Importing package rv32_pkg
+# 
+# Top level modules:
+# 	controller
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/decoder.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/decoder.sv 
+# -- Compiling module decoder
+# -- Importing package rv32_pkg
+# 
+# Top level modules:
+# 	decoder
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/hazard_unit.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/hazard_unit.sv 
+# -- Compiling module hazard_unit
+# 
+# Top level modules:
+# 	hazard_unit
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/imm_gen.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/imm_gen.sv 
+# -- Compiling module imm_gen
+# -- Importing package rv32_pkg
+# 
+# Top level modules:
+# 	imm_gen
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/register_file.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/register_file.sv 
+# -- Compiling module register_file
+# 
+# Top level modules:
+# 	register_file
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/csr_regfile.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/csr_regfile.sv 
+# -- Compiling module csr_regfile
+# 
+# Top level modules:
+# 	csr_regfile
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/pipe_if_de.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/pipe_if_de.sv 
+# -- Compiling module pipe_if_de
+# 
+# Top level modules:
+# 	pipe_if_de
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/pipe_de_mw.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/pipe_de_mw.sv 
+# -- Compiling module pipe_de_mw
+# -- Importing package rv32_pkg
+# 
+# Top level modules:
+# 	pipe_de_mw
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/instr_mem.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:43 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/instr_mem.sv 
+# -- Compiling module instr_mem
+# 
+# Top level modules:
+# 	instr_mem
+# End time: 11:55:43 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/data_mem.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/data_mem.sv 
+# -- Compiling module data_mem
+# 
+# Top level modules:
+# 	data_mem
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/axi4_imem_slave.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/axi4_imem_slave.sv 
+# -- Compiling module axi4_imem_slave
+# 
+# Top level modules:
+# 	axi4_imem_slave
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/axi4_dmem_slave.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/axi4_dmem_slave.sv 
+# -- Compiling module axi4_dmem_slave
+# 
+# Top level modules:
+# 	axi4_dmem_slave
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/core/rv32_core_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/core/rv32_core_top.sv 
+# -- Compiling module rv32_core_top
+# -- Importing package rv32_pkg
+# 
+# Top level modules:
+# 	rv32_core_top
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# echo "=========================================================="
+# ==========================================================
+# echo " Step 2: Compiling AXI4-to-APB Bridge..."
+#  Step 2: Compiling AXI4-to-APB Bridge...
+# echo "=========================================================="
+# ==========================================================
+# 
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/bridge/axi4_to_apb_bridge.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/bridge/axi4_to_apb_bridge.sv 
+# -- Compiling module axi4_to_apb_bridge
+# 
+# Top level modules:
+# 	axi4_to_apb_bridge
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# echo "=========================================================="
+# ==========================================================
+# echo " Step 3: Compiling Peripheral Infrastructure..."
+#  Step 3: Compiling Peripheral Infrastructure...
+# echo "=========================================================="
+# ==========================================================
+# 
+# Packages & Common Infrastructure
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/includes/cf_math_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/includes/cf_math_pkg.sv 
+# -- Compiling package cf_math_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/includes/APB.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/includes/APB.sv 
+# -- Compiling interface APB
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/includes/REG_BUS.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/includes/REG_BUS.sv 
+# -- Compiling interface REG_BUS
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/includes/apb_to_reg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/includes/apb_to_reg.sv 
+# -- Compiling module apb_to_reg
+# 
+# Top level modules:
+# 	apb_to_reg
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/includes/apb_to_reg_v2.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/includes/apb_to_reg_v2.sv 
+# -- Compiling module apb_to_reg_v2
+# 
+# Top level modules:
+# 	apb_to_reg_v2
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/includes/sync.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/includes/sync.sv 
+# -- Compiling module sync
+# 
+# Top level modules:
+# 	sync
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# echo "=========================================================="
+# ==========================================================
+# echo " Step 4: Compiling Peripheral RTL..."
+#  Step 4: Compiling Peripheral RTL...
+# echo "=========================================================="
+# ==========================================================
+# 
+# GPIO
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/GPIO/gpio_reg_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/GPIO/gpio_reg_pkg.sv 
+# -- Compiling package gpio_reg_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv 
+# -- Compiling module gpio_reg_top
+# -- Importing package gpio_reg_pkg
+# ** Warning: ./dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv(21): (vlog-13314) Defaulting port 'hw2reg' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Compiling module gpio_reg_top_intf
+# ** Warning: ./dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv(15449): (vlog-13314) Defaulting port 'hw2reg' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	gpio_reg_top_intf
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/GPIO/gpio_input_stage.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/GPIO/gpio_input_stage.sv 
+# -- Compiling module gpio_input_stage
+# 
+# Top level modules:
+# 	gpio_input_stage
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/GPIO/gpio_input_stage_no_clk_gates.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/GPIO/gpio_input_stage_no_clk_gates.sv 
+# -- Compiling module gpio_input_stage
+# 
+# Top level modules:
+# 	gpio_input_stage
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/GPIO/gpio.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/GPIO/gpio.sv 
+# -- Compiling module gpio
+# -- Importing package gpio_reg_pkg
+# -- Compiling module gpio_intf
+# 
+# Top level modules:
+# 	gpio_intf
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0, Suppressed Warnings: 38
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/GPIO/gpio_apb_wrap.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/GPIO/gpio_apb_wrap.sv 
+# -- Compiling module gpio_apb_wrap
+# -- Importing package gpio_reg_pkg
+# -- Compiling module gpio_apb_wrap_intf
+# 
+# Top level modules:
+# 	gpio_apb_wrap_intf
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# PLIC
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/top_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/top_pkg.sv 
+# -- Compiling package top_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:44 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/tlul_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:44 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/tlul_pkg.sv 
+# -- Compiling package tlul_pkg
+# -- Importing package top_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/prim_subreg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/prim_subreg.sv 
+# -- Compiling module prim_subreg
+# 
+# Top level modules:
+# 	prim_subreg
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/prim_subreg_ext.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/prim_subreg_ext.sv 
+# -- Compiling module prim_subreg_ext
+# 
+# Top level modules:
+# 	prim_subreg_ext
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/rv_plic_reg_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/rv_plic_reg_pkg.sv 
+# -- Compiling package rv_plic_reg_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv 
+# -- Compiling module rv_plic_reg_top
+# -- Importing package tlul_pkg
+# -- Importing package top_pkg
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv(13): (vlog-13314) Defaulting port 'tl_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Importing package rv_plic_reg_pkg
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv(17): (vlog-13314) Defaulting port 'hw2reg' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	rv_plic_reg_top
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/rv_plic_gateway.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/rv_plic_gateway.sv 
+# -- Compiling module rv_plic_gateway
+# 
+# Top level modules:
+# 	rv_plic_gateway
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/rv_plic_target.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/rv_plic_target.sv 
+# -- Compiling module rv_plic_target
+# 
+# Top level modules:
+# 	rv_plic_target
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/rv_plic.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/rv_plic.sv 
+# -- Compiling module rv_plic
+# -- Importing package tlul_pkg
+# -- Importing package top_pkg
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/rv_plic.sv(33): (vlog-13314) Defaulting port 'tl_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Importing package rv_plic_reg_pkg
+# 
+# Top level modules:
+# 	rv_plic
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/plic_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/plic_top.sv 
+# -- Compiling module plic_top
+# 
+# Top level modules:
+# 	plic_top
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv 
+# -- Compiling module plic_regs
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(6): (vlog-13314) Defaulting port 'prio_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(10): (vlog-13314) Defaulting port 'ip_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(12): (vlog-13314) Defaulting port 'ie_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(16): (vlog-13314) Defaulting port 'threshold_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(20): (vlog-13314) Defaulting port 'cc_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	plic_regs
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 5
+# 
+# CLINT
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clic_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clic_pkg.sv 
+# -- Compiling package clic_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clicint_reg_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clicint_reg_pkg.sv 
+# -- Compiling package clicint_reg_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv 
+# -- Compiling module clicint_reg_top
+# -- Importing package clicint_reg_pkg
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv(21): (vlog-13314) Defaulting port 'hw2reg' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Compiling module clicint_reg_top_intf
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv(326): (vlog-13314) Defaulting port 'hw2reg' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	clicint_reg_top_intf
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clicintv_reg_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clicintv_reg_pkg.sv 
+# -- Compiling package clicintv_reg_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clicintv_reg_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clicintv_reg_top.sv 
+# -- Compiling module clicintv_reg_top
+# -- Importing package clicintv_reg_pkg
+# -- Compiling module clicintv_reg_top_intf
+# 
+# Top level modules:
+# 	clicintv_reg_top_intf
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clicvs_reg_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clicvs_reg_pkg.sv 
+# -- Compiling package clicvs_reg_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clicvs_reg_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clicvs_reg_top.sv 
+# -- Compiling module clicvs_reg_top
+# -- Importing package clicvs_reg_pkg
+# -- Compiling module clicvs_reg_top_intf
+# 
+# Top level modules:
+# 	clicvs_reg_top_intf
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/mclic_reg_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/mclic_reg_pkg.sv 
+# -- Compiling package mclic_reg_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/mclic_reg_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/mclic_reg_top.sv 
+# -- Compiling module mclic_reg_top
+# -- Importing package mclic_reg_pkg
+# -- Compiling module mclic_reg_top_intf
+# 
+# Top level modules:
+# 	mclic_reg_top_intf
+# End time: 11:55:45 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clic_gateway.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:45 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clic_gateway.sv 
+# -- Compiling module clic_gateway
+# 
+# Top level modules:
+# 	clic_gateway
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clic_target.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clic_target.sv 
+# -- Compiling module clic_target
+# -- Importing package clic_pkg
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_target.sv(53): (vlog-13314) Defaulting port 'intv_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	clic_target
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clic.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clic.sv 
+# -- Compiling module clic
+# -- Importing package clic_pkg
+# -- Importing package mclic_reg_pkg
+# -- Importing package clicint_reg_pkg
+# -- Importing package clicintv_reg_pkg
+# -- Importing package clicvs_reg_pkg
+# -- Importing package cf_math_pkg
+# 
+# Top level modules:
+# 	clic
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clic_apb.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clic_apb.sv 
+# -- Compiling module clic_apb
+# -- Importing package clic_pkg
+# 
+# Top level modules:
+# 	clic_apb
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv 
+# -- Compiling module clic_reg_adapter
+# -- Importing package clic_pkg
+# -- Importing package mclic_reg_pkg
+# -- Importing package clicint_reg_pkg
+# -- Importing package clicintv_reg_pkg
+# -- Importing package clicvs_reg_pkg
+# -- Importing package cf_math_pkg
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv(33): (vlog-13314) Defaulting port 'mclic_reg2hw' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv(35): (vlog-13314) Defaulting port 'clicint_reg2hw' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv(38): (vlog-13314) Defaulting port 'clicintv_reg2hw' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv(40): (vlog-13314) Defaulting port 'clicvs_reg2hw' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	clic_reg_adapter
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 4
+# 
+# UART
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/UART/apb_uart.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/UART/apb_uart.sv 
+# -- Compiling module apb_uart
+# 
+# Top level modules:
+# 	apb_uart
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/UART/reg_uart_wrap.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/UART/reg_uart_wrap.sv 
+# -- Compiling module reg_uart_wrap
+# 
+# Top level modules:
+# 	reg_uart_wrap
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/includes/apb_uart_wrap.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/includes/apb_uart_wrap.sv 
+# -- Compiling module apb_uart_wrap
+# 
+# Top level modules:
+# 	apb_uart_wrap
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# SPI
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/SPI/spi_master_fifo.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/SPI/spi_master_fifo.sv 
+# -- Compiling module spi_master_fifo
+# 
+# Top level modules:
+# 	spi_master_fifo
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/SPI/spi_master_clkgen.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/SPI/spi_master_clkgen.sv 
+# -- Compiling module spi_master_clkgen
+# 
+# Top level modules:
+# 	spi_master_clkgen
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/SPI/spi_master_tx.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/SPI/spi_master_tx.sv 
+# -- Compiling module spi_master_tx
+# 
+# Top level modules:
+# 	spi_master_tx
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/SPI/spi_master_rx.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/SPI/spi_master_rx.sv 
+# -- Compiling module spi_master_rx
+# 
+# Top level modules:
+# 	spi_master_rx
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/SPI/spi_master_controller.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/SPI/spi_master_controller.sv 
+# -- Compiling module spi_master_controller
+# 
+# Top level modules:
+# 	spi_master_controller
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/SPI/spi_master_apb_if.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/SPI/spi_master_apb_if.sv 
+# -- Compiling module spi_master_apb_if
+# 
+# Top level modules:
+# 	spi_master_apb_if
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/SPI/apb_spi_master.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/SPI/apb_spi_master.sv 
+# -- Compiling module apb_spi_master
+# 
+# Top level modules:
+# 	apb_spi_master
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Timer
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/TIMER/timer.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/TIMER/timer.sv 
+# -- Compiling module timer
+# 
+# Top level modules:
+# 	timer
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/TIMER/apb_timer.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/TIMER/apb_timer.sv 
+# -- Compiling module apb_timer
+# 
+# Top level modules:
+# 	apb_timer
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# Watchdog
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/WDT/apb_watchdog.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/WDT/apb_watchdog.sv 
+# -- Compiling module apb_watchdog
+# 
+# Top level modules:
+# 	apb_watchdog
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# APB Interconnect & Peripheral Subsystem Top
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/apb_interconnect.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:46 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/apb_interconnect.sv 
+# -- Compiling module apb_interconnect
+# ** Warning: ./dut/peripherals/Peripherals/apb_interconnect.sv(47): (vlog-13314) Defaulting port 'prdata_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	apb_interconnect
+# End time: 11:55:46 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/peripherals/Peripherals/peripheral_subsystem.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:47 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/peripherals/Peripherals/peripheral_subsystem.sv 
+# -- Compiling module peripheral_subsystem
+# 
+# Top level modules:
+# 	peripheral_subsystem
+# End time: 11:55:47 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# echo "=========================================================="
+# ==========================================================
+# echo " Step 5: Compiling SoC Top..."
+#  Step 5: Compiling SoC Top...
+# echo "=========================================================="
+# ==========================================================
+# 
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./dut/soc_top.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:47 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./dut/soc_top.sv 
+# -- Compiling module soc_top
+# 
+# Top level modules:
+# 	soc_top
+# End time: 11:55:47 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# echo "=========================================================="
+# ==========================================================
+# echo " Step 6: Compiling APB VIP & UVM Environment..."
+#  Step 6: Compiling APB VIP & UVM Environment...
+# echo "=========================================================="
+# ==========================================================
+# 
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./vip/apb/apb_if.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:47 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./vip/apb/apb_if.sv 
+# -- Compiling interface apb_if
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:47 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./vip/apb/apb_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:47 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./vip/apb/apb_pkg.sv 
+# -- Compiling package apb_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# ** Note: (vlog-2286) ./vip/apb/apb_pkg.sv(8): Using implicit +incdir+/home/ti_ml/SMDP/MentorGraphics/QuestaSim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:47 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./env/subsystem_pkg.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:47 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./env/subsystem_pkg.sv 
+# -- Compiling package subsystem_pkg
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package apb_pkg
+# ** Note: (vlog-2286) ./env/subsystem_pkg.sv(12): Using implicit +incdir+/home/ti_ml/SMDP/MentorGraphics/QuestaSim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# 
+# Top level modules:
+# 	--none--
+# End time: 11:55:47 on Sep 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0, Suppressed Errors: 19
+# 
+# echo "=========================================================="
+# ==========================================================
+# echo " Step 7: Compiling Testbench..."
+#  Step 7: Compiling Testbench...
+# echo "=========================================================="
+# ==========================================================
+# 
+# vlog -reportprogress 300 -sv {*}$INC_FLAGS ./tb/tb_top_with_core.sv
+# QuestaSim vlog 2022.4 Compiler 2022.10 Oct 18 2022
+# Start time: 11:55:47 on Sep 29,2026
+# vlog -reportprogress 300 -sv "+incdir+./dut/peripherals/includes" "+incdir+./dut/peripherals/includes/apb" "+incdir+./dut/peripherals/includes/common_cells" "+incdir+./dut/peripherals/includes/register_interface" "+incdir+./dut/peripherals/includes/obi" "+incdir+./dut/core" "+incdir+./vip/apb" "+incdir+./vip/axi" "+incdir+./env" "+incdir+./tests" "+incdir+./tb" "+incdir+./dut/peripherals/Peripherals/GPIO" "+incdir+./dut/peripherals/Peripherals/PLIC" "+incdir+./dut/peripherals/Peripherals/CLINT" "+incdir+./dut/peripherals/Peripherals/UART" "+incdir+./dut/peripherals/Peripherals/SPI" "+incdir+./dut/peripherals/Peripherals/TIMER" "+incdir+./dut/peripherals/Peripherals/WDT" -suppress 7027,2583 ./tb/tb_top_with_core.sv 
+# ** Note: (vlog-2286) ./tb/tb_top_with_core.sv(14): Using implicit +incdir+/home/ti_ml/SMDP/MentorGraphics/QuestaSim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling package tb_top_with_core_sv_unit
+# -- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+# -- Importing package subsystem_pkg
+# -- Importing package apb_pkg
+# -- Compiling module tb_top_with_core
+# 
+# Top level modules:
+# 	tb_top_with_core
+# End time: 11:55:48 on Sep 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# echo "=========================================================="
+# ==========================================================
+# echo " Step 8: Launching Simulation..."
+#  Step 8: Launching Simulation...
+# echo " Test: $::test_name"
+#  Test: subsystem_base_test
+# echo "=========================================================="
+# ==========================================================
+# 
+# vsim +UVM_TESTNAME=$::test_name work.tb_top_with_core
+# vsim "+UVM_TESTNAME=subsystem_base_test" work.tb_top_with_core 
+# Start time: 11:55:48 on Sep 29,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: ./dut/peripherals/Peripherals/apb_interconnect.sv(47): (vopt-13314) Defaulting port 'prdata_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv(21): (vopt-13314) Defaulting port 'hw2reg' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(6): (vopt-13314) Defaulting port 'prio_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(10): (vopt-13314) Defaulting port 'ip_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(12): (vopt-13314) Defaulting port 'ie_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(16): (vopt-13314) Defaulting port 'threshold_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/PLIC/plic_regmap.sv(20): (vopt-13314) Defaulting port 'cc_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_target.sv(53): (vopt-13314) Defaulting port 'intv_i' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv(21): (vopt-13314) Defaulting port 'hw2reg' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv(33): (vopt-13314) Defaulting port 'mclic_reg2hw' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv(35): (vopt-13314) Defaulting port 'clicint_reg2hw' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv(38): (vopt-13314) Defaulting port 'clicintv_reg2hw' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv(40): (vopt-13314) Defaulting port 'clicvs_reg2hw' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ./dut/core/axi4_dmem_slave.sv(132): (vopt-7061) Variable 'mem' driven in an always_ff block, may not be driven by any other process. See ./dut/core/axi4_dmem_slave.sv(70).
+# ** Warning: ./dut/core/axi4_dmem_slave.sv(133): (vopt-7061) Variable 'mem' driven in an always_ff block, may not be driven by any other process. See ./dut/core/axi4_dmem_slave.sv(70).
+# ** Warning: ./dut/core/axi4_dmem_slave.sv(134): (vopt-7061) Variable 'mem' driven in an always_ff block, may not be driven by any other process. See ./dut/core/axi4_dmem_slave.sv(70).
+# ** Warning: ./dut/core/axi4_dmem_slave.sv(135): (vopt-7061) Variable 'mem' driven in an always_ff block, may not be driven by any other process. See ./dut/core/axi4_dmem_slave.sv(70).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=17.
+# //  Questa Sim
+# //  Version 2022.4 linux Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.cf_math_pkg(fast)
+# Loading work.clicvs_reg_pkg(fast)
+# Loading work.clicintv_reg_pkg(fast)
+# Loading work.clicint_reg_pkg(fast)
+# Loading work.mclic_reg_pkg(fast)
+# Loading work.clic_pkg(fast)
+# Loading work.gpio_reg_pkg(fast)
+# Loading work.rv32_pkg(fast)
+# Loading work.apb_if(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.apb_pkg(fast)
+# Loading work.subsystem_pkg(fast)
+# Loading work.tb_top_with_core_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.tb_top_with_core(fast)
+# Loading work.apb_to_reg(fast)
+# ** Warning: (vsim-7046) ./tests/subsystem_tests.sv(39):The name 'tb_top_with_core' is not found.  The tool will treat the name as a reference starting at $root.  If this is unexpected please check the spelling of the name 'tb_top_with_core'.
+#    Time: 0 ps  Iteration: 0  Region: /subsystem_pkg File: ./tests/subsystem_tests.sv Line: 39
+# Loading /home/ti_ml/SMDP/MentorGraphics/QuestaSim/questasim/uvm-1.1d/linux/uvm_dpi.so
+# 
+# ============================================================================
+# Waveform Configuration
+# ============================================================================
+# 
+# if {![batch_mode]} {
+#     catch {
+#         add wave -group {Clocks & Reset} \
+#             /tb_top_with_core/HCLK \
+#             /tb_top_with_core/HRESETn
+# 
+#         add wave -group {Core IF Stage} \
+#             /tb_top_with_core/u_soc_top/u_core/pc_out_IF \
+#             /tb_top_with_core/u_soc_top/u_core/instr_IF
+# 
+#         add wave -group {DMEM AXI4 Master} \
+#             /tb_top_with_core/u_soc_top/dmem_awaddr \
+#             /tb_top_with_core/u_soc_top/dmem_awvalid \
+#             /tb_top_with_core/u_soc_top/dmem_awready \
+#             /tb_top_with_core/u_soc_top/dmem_wdata \
+#             /tb_top_with_core/u_soc_top/dmem_wvalid \
+#             /tb_top_with_core/u_soc_top/dmem_wready \
+#             /tb_top_with_core/u_soc_top/dmem_araddr \
+#             /tb_top_with_core/u_soc_top/dmem_arvalid \
+#             /tb_top_with_core/u_soc_top/dmem_arready \
+#             /tb_top_with_core/u_soc_top/dmem_rdata \
+#             /tb_top_with_core/u_soc_top/dmem_rvalid
+# 
+#         add wave -group {Address Demux} \
+#             /tb_top_with_core/u_soc_top/is_periph_req \
+#             /tb_top_with_core/u_soc_top/is_periph_wr \
+#             /tb_top_with_core/u_soc_top/is_periph_rd
+# 
+#         add wave -group {AXI-to-APB Bridge} \
+#             /tb_top_with_core/u_soc_top/u_bridge/*
+# 
+#         add wave -group {APB Bus} \
+#             /tb_top_with_core/u_soc_top/apb_paddr \
+#             /tb_top_with_core/u_soc_top/apb_pwdata \
+#             /tb_top_with_core/u_soc_top/apb_prdata \
+#             /tb_top_with_core/u_soc_top/apb_pwrite \
+#             /tb_top_with_core/u_soc_top/apb_psel \
+#             /tb_top_with_core/u_soc_top/apb_penable \
+#             /tb_top_with_core/u_soc_top/apb_pready
+# 
+#         add wave -group {GPIO} \
+#             /tb_top_with_core/gpio_out \
+#             /tb_top_with_core/gpio_oe \
+#             /tb_top_with_core/gpio_in
+# 
+#         add wave -group {UART} \
+#             /tb_top_with_core/uart_rx \
+#             /tb_top_with_core/uart_tx
+# 
+#         add wave -group {Interrupts} \
+#             /tb_top_with_core/u_soc_top/irq_external \
+#             /tb_top_with_core/u_soc_top/irq_timer \
+#             /tb_top_with_core/u_soc_top/wdt_irq \
+#             /tb_top_with_core/u_soc_top/gpio_irq \
+#             /tb_top_with_core/u_soc_top/uart_irq
+# 
+#         wave zoomfull
+#     }
+# }
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test subsystem_base_test...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# -------------------------------------------------------------------
+# Name                       Type                         Size  Value
+# -------------------------------------------------------------------
+# uvm_test_top               subsystem_base_test          -     @472 
+#   env                      subsystem_env                -     @479 
+#     apb_agent              apb_master_agent             -     @490 
+#       driver               apb_master_driver            -     @636 
+#         rsp_port           uvm_analysis_port            -     @651 
+#         seq_item_port      uvm_seq_item_pull_port       -     @643 
+#       monitor              apb_monitor                  -     @629 
+#         ap                 uvm_analysis_port            -     @769 
+#       sequencer            uvm_sequencer                -     @659 
+#         rsp_export         uvm_analysis_export          -     @666 
+#         seq_item_export    uvm_seq_item_pull_imp        -     @760 
+#         arbitration_queue  array                        0     -    
+#         lock_queue         array                        0     -    
+#         num_last_reqs      integral                     32    'd1  
+#         num_last_rsps      integral                     32    'd1  
+#     coverage               subsystem_coverage           -     @613 
+#       analysis_imp         uvm_analysis_imp             -     @620 
+#     scoreboard             subsystem_scoreboard         -     @497 
+#       ap_imp               uvm_analysis_imp             -     @783 
+#     v_sqr                  subsystem_virtual_sequencer  -     @504 
+#       rsp_export           uvm_analysis_export          -     @511 
+#       seq_item_export      uvm_seq_item_pull_imp        -     @605 
+#       arbitration_queue    array                        0     -    
+#       lock_queue           array                        0     -    
+#       num_last_reqs        integral                     32    'd1  
+#       num_last_rsps        integral                     32    'd1  
+# -------------------------------------------------------------------
+# 
+# UVM_INFO ./tests/subsystem_tests.sv(36) @ 0: uvm_test_top [TEST] === subsystem_base_test: Core will run default firmware ===
+# [TB_CHECK] INFO: GPIO_OUT = 0x00000000 (firmware may still be running)
+# UVM_INFO ./tests/subsystem_tests.sv(45) @ 3100000: uvm_test_top [TEST] === subsystem_base_test: Firmware execution window complete ===
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 3100000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ./env/subsystem_scoreboard.sv(129) @ 3100000: uvm_test_top.env.scoreboard [SCB] ============================================
+# UVM_INFO ./env/subsystem_scoreboard.sv(130) @ 3100000: uvm_test_top.env.scoreboard [SCB]         SCOREBOARD SUMMARY
+# UVM_INFO ./env/subsystem_scoreboard.sv(131) @ 3100000: uvm_test_top.env.scoreboard [SCB] ============================================
+# UVM_INFO ./env/subsystem_scoreboard.sv(132) @ 3100000: uvm_test_top.env.scoreboard [SCB]   Writes:      0
+# UVM_INFO ./env/subsystem_scoreboard.sv(133) @ 3100000: uvm_test_top.env.scoreboard [SCB]   Reads:       0
+# UVM_INFO ./env/subsystem_scoreboard.sv(134) @ 3100000: uvm_test_top.env.scoreboard [SCB]   Matches:     0
+# UVM_INFO ./env/subsystem_scoreboard.sv(135) @ 3100000: uvm_test_top.env.scoreboard [SCB]   Mismatches:  0
+# UVM_INFO ./env/subsystem_scoreboard.sv(136) @ 3100000: uvm_test_top.env.scoreboard [SCB] ============================================
+# UVM_INFO ./env/subsystem_scoreboard.sv(138) @ 3100000: uvm_test_top.env.scoreboard [SCB]   RESULT: *** PASS ***
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   16
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCB]     9
+# [TEST]     2
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : /home/ti_ml/SMDP/MentorGraphics/QuestaSim/questasim/linux/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 3100 ns  Iteration: 54  Instance: /tb_top_with_core
+# End time: 11:55:53 on Sep 29,2026, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 18, Suppressed Errors: 92
