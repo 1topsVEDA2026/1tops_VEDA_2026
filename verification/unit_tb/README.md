@@ -6,6 +6,8 @@ This directory contains standalone, self-checking unit-level testbenches for ind
 
 | Unit / Block | Testbench File | Target Module | Scope of Verification |
 |:---|:---|:---|:---|
+| **Program Counter (PC) Unit** | `tb_pc.sv` | `rtl/core/pc_unit.sv` | Parameterized reset vector (`RESET_PC = 0x0000_0000` / `0x8000_0000`), sequential increment (`PC+4`), pipeline freeze on stalls, halfword/word alignment enforcement, and strict redirect priority hierarchy (`Trap > MRET > Branch/Jump > Sequential`). |
+| **Multiply / Divide Unit (MDU)** | `tb_mdu.sv` | `rtl/core/mdu.sv` | All 8 RV32M operations (`MUL`, `MULH`, `MULHSU`, `MULHU`, `DIV`, `DIVU`, `REM`, `REMU`), Booth Radix-4 3-cycle multiplication, restoring 33-cycle iterative division, divide-by-zero corner cases, signed overflow (`INT_MIN / -1`), and stall/backpressure handshake sequences. |
 | **ALU** | `tb_alu.sv` | `rtl/core/alu.sv` | Arithmetic (`ADD`, `SUB`), logical (`AND`, `OR`, `XOR`), and shift operations (`SLL`, `SRL`, `SRA`) across data corner cases (`0x8000_0000`, `0x7FFF_FFFF`, `0`, `0xFFFF_FFFF`) and variable shift amounts (`0, 1, 31, >31`). |
 | **Branch Comparator** | `tb_branch_cmp.sv` | `rtl/core/branch_cmp.sv` | Branch comparison evaluations (`BEQ`, `BNE`, `BLT`, `BGE`, `BLTU`, `BGEU`) verifying taken and not-taken conditions for signed and unsigned comparisons (`rs1 < rs2`, `rs1 == rs2`, `rs1 > rs2`). |
 | **Instruction Decoder** | `tb_decoder.sv` | `rtl/core/decoder.sv` | Full decode space validation for RV32I integer and RV32M extension opcodes, instruction field extraction (`rs1`, `rs2`, `rd`, `csr`), funct3/funct7 decoding, and illegal instruction exception signaling. |
@@ -22,6 +24,8 @@ The testbenches are written in standard SystemVerilog and can be simulated with 
 ```bash
 # Example simulation using VCS:
 vcs -sverilog -full64 +incdir+../../rtl/core ../../rtl/core/rv32_pkg.sv ../../rtl/core/alu.sv tb_alu.sv -R
+vcs -sverilog -full64 +incdir+../../rtl/core ../../rtl/core/pc_unit.sv tb_pc.sv -R
+vcs -sverilog -full64 +incdir+../../rtl/core ../../rtl/core/rv32_pkg.sv ../../rtl/core/booth_multiplier_radix4.sv ../../rtl/core/mdu.sv tb_mdu.sv -R
 
 # Example simulation using QuestaSim:
 vlog +incdir+../../rtl/core ../../rtl/core/rv32_pkg.sv ../../rtl/core/alu.sv tb_alu.sv

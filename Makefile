@@ -45,6 +45,7 @@ RTL_SRCS := \
 	$(ROOT_DIR)/imm_gen.sv \
 	$(ROOT_DIR)/pipe_de_mw.sv \
 	$(ROOT_DIR)/pipe_if_de.sv \
+	$(ROOT_DIR)/pc_unit.sv \
 	$(ROOT_DIR)/register_file.sv \
 	$(ROOT_DIR)/rv32_core_top.sv \
 	$(ROOT_DIR)/axi4_imem_slave.sv \

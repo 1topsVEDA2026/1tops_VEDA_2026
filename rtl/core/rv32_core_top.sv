@@ -112,7 +112,9 @@ module rv32_core_top
     logic [ 4:0] rd_addr_MW;
     logic        rf_en_MW;
 
-    //  STAGE 1 — FETCH (IF)
+    // ====================================================================
+    // STAGE 1 — FETCH (IF): Program Counter Unit
+    // ====================================================================
 
     logic [31:0] pc_out_IF;
     logic [31:0] pc_next_IF;
@@ -123,28 +125,26 @@ module rv32_core_top
     logic        is_mret_DE;
     logic        trap_illegal;
     logic [31:0] opr_res_DE;
+    logic        epc_taken_IF;
 
-    wire epc_taken_IF = trap_illegal & ready_IF;
-
-    // PC Register
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n)           pc_out_IF <= RESET_PC;
-        else if (ready_IF)    pc_out_IF <= nxt_pc;
-    end
-
-    assign pc_next_IF = pc_out_IF + 32'd4;
-
-    // PC Mux
-    always_comb begin
-        if (epc_taken_IF)
-            nxt_pc = mtvec_out;
-        else if (is_mret_DE & valid_DE & ready_IF)
-            nxt_pc = epc_pc;
-        else if (br_take_DE & valid_DE & ready_IF)
-            nxt_pc = {opr_res_DE[31:1], 1'b0};
-        else
-            nxt_pc = pc_next_IF;
-    end
+    pc_unit #(
+        .RESET_PC (RESET_PC)
+    ) u_pc_unit (
+        .clk          (clk),
+        .rst_n        (rst_n),
+        .ready_IF     (ready_IF),
+        .trap_illegal (trap_illegal),
+        .mtvec_out    (mtvec_out),
+        .is_mret_DE   (is_mret_DE),
+        .valid_DE     (valid_DE),
+        .epc_pc       (epc_pc),
+        .br_take_DE   (br_take_DE),
+        .opr_res_DE   (opr_res_DE),
+        .pc_out_IF    (pc_out_IF),
+        .pc_next_IF   (pc_next_IF),
+        .nxt_pc       (nxt_pc),
+        .epc_taken_IF (epc_taken_IF)
+    );
 
     // ====================================================================
     // IMEM AXI4 Master — AR + R channels
