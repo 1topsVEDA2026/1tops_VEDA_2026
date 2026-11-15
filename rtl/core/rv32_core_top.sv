@@ -385,170 +385,53 @@ module rv32_core_top
     );
 
 
-    //  STAGE 3 — MEMORY-WRITEBACK (MW)
-
     // ====================================================================
-    // DMEM AXI4 Master FSM
-    //
-    // States:
-    //   DM_IDLE  — no transaction in flight
-    //   DM_RD    — load:  AR channel driven; waiting for rvalid
-    //   DM_WR    — store: AW+W channels driven; waiting for bvalid
-    //
-    // First-cycle combinational:  arvalid/awvalid/wvalid is asserted
-    // combinationally in DM_IDLE+rd/wr_en so the slave sees the request
-    // in the same cycle the pipeline decodes it — matching OBI latency for
-    // zero-latency slave models.
+    // STAGE 3 — MEMORY-WRITEBACK (MW): Memory Interface Unit (MIU)
     // ====================================================================
-    typedef enum logic [1:0] {
-        DM_IDLE = 2'b00,
-        DM_RD   = 2'b01,
-        DM_WR   = 2'b10
-    } dm_state_t;
-
-    dm_state_t dm_state;
-    logic      dm_ar_done, dm_aw_done, dm_w_done;
-
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) begin
-            dm_state  <= DM_IDLE;
-            dm_ar_done <= 1'b0;
-            dm_aw_done <= 1'b0;
-            dm_w_done  <= 1'b0;
-        end else begin
-            case (dm_state)
-                DM_IDLE: begin
-                    if (rd_en_MW && !dmem_rvalid) begin
-                        dm_state   <= DM_RD;
-                        dm_ar_done <= dmem_arvalid && dmem_arready;
-                    end
-                    else if (wr_en_MW && !dmem_bvalid) begin
-                        dm_state   <= DM_WR;
-                        dm_aw_done <= dmem_awvalid && dmem_awready;
-                        dm_w_done  <= dmem_wvalid  && dmem_wready;
-                    end
-                    // else: zero-latency slave responded this cycle → stay IDLE
-                end
-                DM_RD: begin
-                    if (dmem_arvalid && dmem_arready) dm_ar_done <= 1'b1;
-                    if (dmem_rvalid) begin
-                        dm_state  <= DM_IDLE;
-                        dm_ar_done <= 1'b0;
-                    end
-                end
-                DM_WR: begin
-                    if (dmem_awvalid && dmem_awready) dm_aw_done <= 1'b1;
-                    if (dmem_wvalid  && dmem_wready)  dm_w_done  <= 1'b1;
-                    if (dmem_bvalid) begin
-                        dm_state  <= DM_IDLE;
-                        dm_aw_done <= 1'b0;
-                        dm_w_done  <= 1'b0;
-                    end
-                end
-                default: dm_state <= DM_IDLE;
-            endcase
-        end
-    end
-
-    // ---- AXI4 DMEM stall ----
-    // Stall while: (a) transaction in progress, OR (b) new request that
-    // didn't complete combinationally this cycle (slave not zero-latency).
-    wire dmem_rd_comb_ok = (dm_state == DM_IDLE) && rd_en_MW && dmem_rvalid;
-    wire dmem_wr_comb_ok = (dm_state == DM_IDLE) && wr_en_MW && dmem_bvalid;
-
-    assign dmem_stall =
-        (dm_state == DM_RD  && !dmem_rvalid)  ||
-        (dm_state == DM_WR  && !dmem_bvalid)  ||
-        ((dm_state == DM_IDLE) && rd_en_MW && !dmem_rd_comb_ok) ||
-        ((dm_state == DM_IDLE) && wr_en_MW && !dmem_wr_comb_ok);
-
-    // ---- AXI4 size based on access width ----
-    logic [2:0] dmem_axsize;
-    always_comb begin
-        case (mem_acc_mode_MW)
-            MEM_BYTE, MEM_BYTE_U: dmem_axsize = 3'b000;  // 1 byte
-            MEM_HALF, MEM_HALF_U: dmem_axsize = 3'b001;  // 2 bytes
-            default:              dmem_axsize = 3'b010;  // 4 bytes (word)
-        endcase
-    end
-
-    // ---- AXI4 AR channel (loads) ----
-    // First cycle: combinational from DM_IDLE; subsequent: from DM_RD
-    assign dmem_arvalid = ((dm_state == DM_IDLE) && rd_en_MW) ||
-                          ((dm_state == DM_RD)   && !dm_ar_done);
-    assign dmem_araddr  = opr_res_MW;
-    assign dmem_arlen   = 8'd0;
-    assign dmem_arsize  = dmem_axsize;
-    assign dmem_arburst = 2'b01;
-    assign dmem_arcache = 4'b0000;
-    assign dmem_arprot  = 3'b000;
-    assign dmem_arlock  = 1'b0;
-    assign dmem_rready  = 1'b1;
-
-    // ---- AXI4 AW+W channels (stores) ----
-    assign dmem_awvalid = ((dm_state == DM_IDLE) && wr_en_MW) ||
-                          ((dm_state == DM_WR)   && !dm_aw_done);
-    assign dmem_awaddr  = opr_res_MW;
-    assign dmem_awlen   = 8'd0;
-    assign dmem_awsize  = dmem_axsize;
-    assign dmem_awburst = 2'b01;
-    assign dmem_awcache = 4'b0000;
-    assign dmem_awprot  = 3'b000;
-    assign dmem_awlock  = 1'b0;
-
-    assign dmem_wvalid  = ((dm_state == DM_IDLE) && wr_en_MW) ||
-                          ((dm_state == DM_WR)   && !dm_w_done);
-    assign dmem_wlast   = 1'b1;
-    assign dmem_bready  = 1'b1;
-
-    // ---- Store data + byte strobes (same logic as before) ----
-    always_comb begin
-        case (mem_acc_mode_MW)
-            MEM_BYTE, MEM_BYTE_U: begin
-                dmem_wdata = {4{rsdata2_MW[7:0]}};
-                dmem_wstrb = 4'b0001 << opr_res_MW[1:0];
-            end
-            MEM_HALF, MEM_HALF_U: begin
-                dmem_wdata = {2{rsdata2_MW[15:0]}};
-                dmem_wstrb = opr_res_MW[1] ? 4'b1100 : 4'b0011;
-            end
-            MEM_WORD: begin
-                dmem_wdata = rsdata2_MW;
-                dmem_wstrb = 4'b1111;
-            end
-            default: begin
-                dmem_wdata = rsdata2_MW;
-                dmem_wstrb = 4'b0000;
-            end
-        endcase
-    end
-
-    // ---- Load data extraction (same as before, uses dmem_rdata) ----
     logic [31:0] rdata_ext;
-    logic [ 7:0] ld_byte;
-    logic [15:0] ld_half;
 
-    always_comb begin
-        case (opr_res_MW[1:0])
-            2'b00: ld_byte = dmem_rdata[ 7: 0];
-            2'b01: ld_byte = dmem_rdata[15: 8];
-            2'b10: ld_byte = dmem_rdata[23:16];
-            2'b11: ld_byte = dmem_rdata[31:24];
-        endcase
-    end
-
-    assign ld_half = opr_res_MW[1] ? dmem_rdata[31:16] : dmem_rdata[15:0];
-
-    always_comb begin
-        case (mem_acc_mode_MW)
-            MEM_BYTE:   rdata_ext = {{24{ld_byte[7]}}, ld_byte};
-            MEM_BYTE_U: rdata_ext = {24'd0, ld_byte};
-            MEM_HALF:   rdata_ext = {{16{ld_half[15]}}, ld_half};
-            MEM_HALF_U: rdata_ext = {16'd0, ld_half};
-            MEM_WORD:   rdata_ext = dmem_rdata;
-            default:    rdata_ext = dmem_rdata;
-        endcase
-    end
+    miu u_miu (
+        .clk             (clk),
+        .rst_n           (rst_n),
+        .rd_en_MW        (rd_en_MW),
+        .wr_en_MW        (wr_en_MW),
+        .mem_acc_mode_MW (mem_acc_mode_MW),
+        .addr_MW         (opr_res_MW),
+        .wdata_MW        (rsdata2_MW),
+        .rdata_ext       (rdata_ext),
+        .dmem_stall      (dmem_stall),
+        .dmem_awaddr     (dmem_awaddr),
+        .dmem_awvalid    (dmem_awvalid),
+        .dmem_awready    (dmem_awready),
+        .dmem_awlen      (dmem_awlen),
+        .dmem_awsize     (dmem_awsize),
+        .dmem_awburst    (dmem_awburst),
+        .dmem_awcache    (dmem_awcache),
+        .dmem_awprot     (dmem_awprot),
+        .dmem_awlock     (dmem_awlock),
+        .dmem_wdata      (dmem_wdata),
+        .dmem_wstrb      (dmem_wstrb),
+        .dmem_wvalid     (dmem_wvalid),
+        .dmem_wready     (dmem_wready),
+        .dmem_wlast      (dmem_wlast),
+        .dmem_bvalid     (dmem_bvalid),
+        .dmem_bready     (dmem_bready),
+        .dmem_bresp      (dmem_bresp),
+        .dmem_araddr     (dmem_araddr),
+        .dmem_arvalid    (dmem_arvalid),
+        .dmem_arready    (dmem_arready),
+        .dmem_arlen      (dmem_arlen),
+        .dmem_arsize     (dmem_arsize),
+        .dmem_arburst    (dmem_arburst),
+        .dmem_arcache    (dmem_arcache),
+        .dmem_arprot     (dmem_arprot),
+        .dmem_arlock     (dmem_arlock),
+        .dmem_rdata      (dmem_rdata),
+        .dmem_rvalid     (dmem_rvalid),
+        .dmem_rready     (dmem_rready),
+        .dmem_rresp      (dmem_rresp),
+        .dmem_rlast      (dmem_rlast)
+    );
 
     // Writeback Mux
     always_comb begin
