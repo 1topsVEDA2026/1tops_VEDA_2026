@@ -1,0 +1,38 @@
+========================================================================
+  Spike ISS vs RTL — test_mext_corner
+========================================================================
+  Spike log : /home/vlsiuser/Downloads/design_rtl_booth_mul_restoring_div/spike_verify/build/test_mext_corner/spike_golden.log
+  RTL log   : /home/vlsiuser/Downloads/design_rtl_booth_mul_restoring_div/spike_verify/build/test_mext_corner/sim/rtl_spike_exec.log
+  PC offset : 0x80000000 (Spike = RTL + offset)
+========================================================================
+
+  Spike entries (after spin removal): 55
+  RTL entries   (after spin removal): 55
+  Spike comparable entries: 13
+  RTL comparable entries  : 13
+
+   #  Status         SpikePC        RTLPC  Opcode      Detail
+------------------------------------------------------------------------------------------
+   0  ✅ PASS   0x80000000  0x00000000  LUI         x1=0x80000000 ✓
+   1  ✅ PASS   0x80000004  0x00000004  I-ALU       x2=0xffffffff ✓
+   2  ✅ PASS   0x80000008  0x00000008  I-ALU       x3=0x00000000 ✓
+   3  ✅ PASS   0x80000014  0x00000014  R-type      x4=0xffffffff ✓
+   4  ✅ PASS   0x80000028  0x00000028  R-type      x5=0xffffffff ✓
+   5  ✅ PASS   0x8000003c  0x0000003c  R-type      x6=0x80000000 ✓
+   6  ✅ PASS   0x80000050  0x00000050  R-type      x7=0x80000000 ✓
+   7  ✅ PASS   0x80000064  0x00000064  R-type      x8=0x80000000 ✓
+   8  ✅ PASS   0x80000078  0x00000078  R-type      x9=0x00000000 ✓
+   9  ✅ PASS   0x8000008c  0x0000008c  R-type      x10=0x00000001 ✓
+  10  ✅ PASS   0x800000a0  0x000000a0  R-type      x11=0xfffffffe ✓
+  11  ✅ PASS   0x800000b4  0x000000b4  R-type      x12=0x00000000 ✓
+  12  ✅ PASS   0x800000d8  0x000000d4  JAL         (no reg write)
+
+========================================================================
+  COMPARISON SUMMARY
+    Total compared : 13
+    PASS           : 13
+    FAIL           : 0
+    Match rate     : 100.0%
+
+  ✅ ALL INSTRUCTIONS MATCH — test_mext_corner RTL matches Spike ISS
+========================================================================

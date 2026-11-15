@@ -1,0 +1,41 @@
+========================================================================
+  Spike ISS vs RTL — test_mext_basic
+========================================================================
+  Spike log : /home/vlsiuser/Downloads/design_rtl_booth_mul_restoring_div/spike_verify/build/test_mext_basic/spike_golden.log
+  RTL log   : /home/vlsiuser/Downloads/design_rtl_booth_mul_restoring_div/spike_verify/build/test_mext_basic/sim/rtl_spike_exec.log
+  PC offset : 0x80000000 (Spike = RTL + offset)
+========================================================================
+
+  Spike entries (after spin removal): 70
+  RTL entries   (after spin removal): 70
+  Spike comparable entries: 16
+  RTL comparable entries  : 16
+
+   #  Status         SpikePC        RTLPC  Opcode      Detail
+------------------------------------------------------------------------------------------
+   0  ✅ PASS   0x80000000  0x00000000  I-ALU       x1=0x00000007 ✓
+   1  ✅ PASS   0x80000004  0x00000004  I-ALU       x2=0x00000003 ✓
+   2  ✅ PASS   0x80000008  0x00000008  I-ALU       x3=0xfffffffc ✓
+   3  ✅ PASS   0x80000014  0x00000014  R-type      x4=0x00000015 ✓
+   4  ✅ PASS   0x80000028  0x00000028  R-type      x5=0xffffffe4 ✓
+   5  ✅ PASS   0x8000003c  0x0000003c  R-type      x6=0x00000000 ✓
+   6  ✅ PASS   0x80000050  0x00000050  R-type      x7=0xffffffff ✓
+   7  ✅ PASS   0x80000064  0x00000064  R-type      x8=0xffffffff ✓
+   8  ✅ PASS   0x80000078  0x00000078  R-type      x9=0x00000000 ✓
+   9  ✅ PASS   0x8000008c  0x0000008c  R-type      x10=0x00000002 ✓
+  10  ✅ PASS   0x800000a0  0x000000a0  R-type      x11=0x00000000 ✓
+  11  ✅ PASS   0x800000b4  0x000000b4  R-type      x12=0x00000002 ✓
+  12  ✅ PASS   0x800000c8  0x000000c8  R-type      x13=0x00000001 ✓
+  13  ✅ PASS   0x800000dc  0x000000dc  R-type      x14=0xfffffffc ✓
+  14  ✅ PASS   0x800000f0  0x000000f0  R-type      x15=0x00000001 ✓
+  15  ✅ PASS   0x80000114  0x00000110  JAL         (no reg write)
+
+========================================================================
+  COMPARISON SUMMARY
+    Total compared : 16
+    PASS           : 16
+    FAIL           : 0
+    Match rate     : 100.0%
+
+  ✅ ALL INSTRUCTIONS MATCH — test_mext_basic RTL matches Spike ISS
+========================================================================
