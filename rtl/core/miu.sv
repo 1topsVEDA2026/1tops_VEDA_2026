@@ -4,7 +4,7 @@
 //
 // Core Component of 3-Stage RV32IM Processor (MW Stage)
 //
-// Sign-off Criteria Verified:
+// 
 //   - Byte enables generation (dmem_wstrb) for byte, halfword, and word stores
 //   - Store data lane alignment and replication across 32-bit bus
 //   - Load data extraction and sign/zero extension (LB, LBU, LH, LHU, LW)
