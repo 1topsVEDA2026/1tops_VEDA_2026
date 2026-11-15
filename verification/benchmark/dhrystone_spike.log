@@ -1,0 +1,13 @@
+====================================================
+  Dhrystone 2.1 Benchmark Results (RV32IM on Spike)
+====================================================
+Number of Runs:               500
+Total Cycles:                 222004
+Cycles / Iteration:           444
+Microseconds per Run:         444 us
+Dhrystones per Second:        2252
+DMIPS Score (@ 1 MHz):        1.281
+DMIPS / MHz:                  1.281
+====================================================
+mcycle = 222017
+minstret = 222024
