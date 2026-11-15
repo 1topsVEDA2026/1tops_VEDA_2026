@@ -1,0 +1,4256 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+                         Chronologic VCS (TM)
+         Version U-2023.03_Full64 -- Wed Nov 11 15:35:16 2026
+
+                    Copyright (c) 1991 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '/home/ti_ml/TOPS_FINAL/rv32_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/alu.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/booth_multiplier_radix4.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/mdu.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/branch_cmp.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/controller.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/decoder.sv'
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS_FINAL/decoder.sv, 189
+  Null statement is used in following verilog source.
+  Source info:                         default: ;
+
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS_FINAL/decoder.sv, 203
+  Null statement is used in following verilog source.
+  Source info:             default: ;
+
+Parsing design file '/home/ti_ml/TOPS_FINAL/hazard_unit.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/imm_gen.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/register_file.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/csr_regfile.sv'
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS_FINAL/csr_regfile.sv, 154
+  Null statement is used in following verilog source.
+  Source info:                     default: ;
+
+Parsing design file '/home/ti_ml/TOPS_FINAL/pipe_if_de.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/pipe_de_mw.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/instr_mem.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/data_mem.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/axi4_imem_slave.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/rv32_core_top.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/bridge/axi4_to_apb_bridge.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/cf_math_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/APB.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/REG_BUS.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_to_reg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_to_reg_v2.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/sync.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_reg_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/common_cells/assertions.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/assign.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_input_stage.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_input_stage_no_clk_gates.sv'
+
+Warning-[OPD] Override previous declaration
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_input_stage_no_clk_gates.sv, 1
+  Previously declared 
+  at:"/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_input_stage.sv",
+  34
+  This module will be overridden by the last declaration.
+  
+
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/assign.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_apb_wrap.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_apb_wrap.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb/assign.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_apb_wrap.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/top_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/tlul_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/prim_subreg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/prim_subreg_ext.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_reg_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv'
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv, 4540
+  Null statement is used in following verilog source.
+  Source info:   we_pulse_assert: assert property(pulse_prop(reg_we));
+
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv, 4541
+  Null statement is used in following verilog source.
+  Source info:   re_pulse_assert: assert property(pulse_prop(reg_re));
+
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv, 4547
+  Null statement is used in following verilog source.
+  Source info:   re2rv_assert: assert property(re_after_rv_prop);
+
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv, 4553
+  Null statement is used in following verilog source.
+  Source info:   en2addr_hit_assert: assert property (en2addr_prop);
+
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv, 4559
+  Null statement is used in following verilog source.
+  Source info:   reqparity_assert: assert property (reqparity_prop);
+
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_gateway.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic_target.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic.sv'
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic.sv, 101
+  Null statement is used in following verilog source.
+  Source info: );
+
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/rv_plic.sv, 105
+  Null statement is used in following verilog source.
+  Source info: );
+
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/plic_top.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/plic_regmap.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicint_reg_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/common_cells/assertions.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/assign.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicint_reg_top.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicintv_reg_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicintv_reg_top.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/common_cells/assertions.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicintv_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicintv_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/assign.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicintv_reg_top.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicvs_reg_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicvs_reg_top.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/common_cells/assertions.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicvs_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicvs_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/assign.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clicvs_reg_top.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/mclic_reg_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/mclic_reg_top.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/common_cells/assertions.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/mclic_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/mclic_reg_top.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/assign.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/mclic_reg_top.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_gateway.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/common_cells/assertions.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/common_cells/assertions.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_apb.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_apb.sv'.
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/register_interface/assign.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_apb.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/UART/apb_uart.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/UART/apb_uart.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/UART/reg_uart_wrap.sv'
+Parsing included file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb/typedef.svh'.
+Back to file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/UART/reg_uart_wrap.sv'.
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv'
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 186
+  Null statement is used in following verilog source.
+  Source info:                     default: ;
+
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_clkgen.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_tx.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_rx.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_controller.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_apb_if.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/apb_timer.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/WDT/apb_watchdog.sv'
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/WDT/apb_watchdog.sv, 216
+  Null statement is used in following verilog source.
+  Source info:                     default: ; // Ignore writes to 
+  read-only/reserved
+
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/apb_interconnect.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/peripheral_subsystem.sv'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/roundconstant.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/roundcounter.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/linear_layer.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/sub_layer.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Ascon.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi.v'
+Parsing design file '/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/soc_top.sv'
+Top Level Modules:
+       soc_top
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/prim_subreg.sv, 33
+prim_subreg, "(SWACCESS == "RW")"
+  A left 24-bit expression is compared to a right 16-bit expression.
+  Comparing 'SWACCESS' of type string
+  with '"RW"' of type string.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/prim_subreg.sv, 33
+prim_subreg, "(SWACCESS == "WO")"
+  A left 24-bit expression is compared to a right 16-bit expression.
+  Comparing 'SWACCESS' of type string
+  with '"WO"' of type string.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/PLIC/prim_subreg.sv, 36
+prim_subreg, "(SWACCESS == "RO")"
+  A left 24-bit expression is compared to a right 16-bit expression.
+  Comparing 'SWACCESS' of type string
+  with '"RO"' of type string.
+
+
+Warning-[UII-L] Interface not instantiated
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/APB.sv, 4
+APB
+  Interface 'APB' defined in logic library 'work' is never instantiated in 
+  design. It will be ignored.
+
+TimeScale is 1 ns / 1 ps
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 594
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 602
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 610
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 618
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 626
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 633
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 641
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 649
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 657
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_imem_slave.sv, 22
+  Following is an unused input.
+  Source info: arlen
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_imem_slave.sv, 23
+  Following is an unused input.
+  Source info: arsize
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_imem_slave.sv, 24
+  Following is an unused input.
+  Source info: arburst
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_imem_slave.sv, 25
+  Following is an unused input.
+  Source info: arcache
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_imem_slave.sv, 26
+  Following is an unused input.
+  Source info: arprot
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_imem_slave.sv, 27
+  Following is an unused input.
+  Source info: arlock
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 22
+  Following is an unused input.
+  Source info: awlen
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 23
+  Following is an unused input.
+  Source info: awsize
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 24
+  Following is an unused input.
+  Source info: awburst
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 25
+  Following is an unused input.
+  Source info: awcache
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 26
+  Following is an unused input.
+  Source info: awprot
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 27
+  Following is an unused input.
+  Source info: awlock
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 33
+  Following is an unused input.
+  Source info: wlast
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 45
+  Following is an unused input.
+  Source info: arlen
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 46
+  Following is an unused input.
+  Source info: arsize
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 47
+  Following is an unused input.
+  Source info: arburst
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 48
+  Following is an unused input.
+  Source info: arcache
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 49
+  Following is an unused input.
+  Source info: arprot
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/axi4_dmem_slave.sv, 50
+  Following is an unused input.
+  Source info: arlock
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 29
+  Following is an unused input.
+  Source info: imem_rlast
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 68
+  Following is an unused input.
+  Source info: dmem_rresp
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 69
+  Following is an unused input.
+  Source info: dmem_rlast
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 594
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_22: assert 
+  property(p_imem_arvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: imem_arvalid dropped before arready handshake");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 602
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_23: assert 
+  property(p_dmem_arvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_arvalid dropped before arready handshake");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 610
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_24: assert 
+  property(p_dmem_awvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_awvalid dropped before awready handshake");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 618
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_25: assert 
+  property(p_dmem_wvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_wvalid dropped before wready handshake");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 626
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_26: assert 
+  property(p_no_rresp_err) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: imem RRESP error response received");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 633
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_27: assert 
+  property(p_no_bresp_err) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem BRESP error response received");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 641
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_28: assert 
+  property(p_stall_flush_mutex) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: stall_IF and flush_DE both active");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 649
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_29: assert property(p_x0_zero) 
+  else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: x0 is not zero");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 657
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_30: assert 
+  property(p_pc_aligned) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: PC not 4-byte aligned");
+  end'
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/bridge/axi4_to_apb_bridge.sv, 20
+  Following is an unused input.
+  Source info: axi_awsize
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/bridge/axi4_to_apb_bridge.sv, 23
+  Following is an unused input.
+  Source info: axi_wstrb
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/bridge/axi4_to_apb_bridge.sv, 34
+  Following is an unused input.
+  Source info: axi_arsize
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio_reg_top.sv, 57
+  Continuous assignment width mismatch
+  11 bits (lhs) versus 32 bits (rhs).
+  Source info: assign reg_addr = reg_intf_req.addr;  
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 147
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: rx_rd_ptr <= (rx_rd_ptr + 1);
+  Expression: rx_rd_ptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 148
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rx_count <= (rx_count - 1);
+  Expression: rx_count
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 160
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: tx_wr_ptr <= (tx_wr_ptr + 1);
+  Expression: tx_wr_ptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 161
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: tx_count <= (tx_count + 1);
+  Expression: tx_count
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 192
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: tx_rd_ptr <= (tx_rd_ptr + 1);
+  Expression: tx_rd_ptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 193
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: tx_count <= (tx_count - 1);
+  Expression: tx_count
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 200
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: rx_wr_ptr <= (rx_wr_ptr + 1);
+  Expression: rx_wr_ptr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 201
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rx_count <= (rx_count + 1);
+  Expression: rx_count
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 217
+apb_uart_wrap, "(baud_counter >= ((reg_dll_dlm << 4) - 1))"
+  A left 16-bit expression is compared to a right 32-bit expression.
+  Comparing 'baud_counter' of type logic [15:0]
+  with '((reg_dll_dlm << 4) - 1)' of type logic [31:0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 221
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: baud_counter <= (baud_counter + 1);
+  Expression: baud_counter
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 243
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: tx_bit_cnt <= (tx_bit_cnt - 1);
+  Expression: tx_bit_cnt
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_uart_wrap.sv, 284
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: rx_bit_cnt <= (rx_bit_cnt - 1);
+  Expression: rx_bit_cnt
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 52
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: elements <= 0;
+  Expression: elements
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 56
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: elements <= 0;
+  Expression: elements
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 64
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: elements <= (elements - 1);
+  Expression: elements
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 67
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: elements <= (elements + 1);
+  Expression: elements
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 92
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: pointer_out <= 0;
+  Expression: pointer_out
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 93
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: pointer_in <= 0;
+  Expression: pointer_in
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 99
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: pointer_out <= 0;
+  Expression: pointer_out
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 100
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: pointer_in <= 0;
+  Expression: pointer_in
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 110
+spi_master_fifo, "(pointer_in == $unsigned((BUFFER_DEPTH - 1)))"
+  A left 4-bit expression is compared to a right 32-bit expression.
+  Comparing 'pointer_in' of type logic [(LOG_BUFFER_DEPTH - 1):0]
+  with '$unsigned((BUFFER_DEPTH - 1))' of type int unsigned.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 111
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: pointer_in <= 0;
+  Expression: pointer_in
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 113
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: pointer_in <= (pointer_in + 1);
+  Expression: pointer_in
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 123
+spi_master_fifo, "(pointer_out == $unsigned((BUFFER_DEPTH - 1)))"
+  A left 4-bit expression is compared to a right 32-bit expression.
+  Comparing 'pointer_out' of type logic [(LOG_BUFFER_DEPTH - 1):0]
+  with '$unsigned((BUFFER_DEPTH - 1))' of type int unsigned.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 124
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: pointer_out <= 0;
+  Expression: pointer_out
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 126
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: pointer_out <= (pointer_out + 1);
+  Expression: pointer_out
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_fifo.sv, 46
+spi_master_fifo, "(elements == BUFFER_DEPTH)"
+  A left 5-bit expression is compared to a right 32-bit expression.
+  Comparing 'elements' of type logic [LOG_BUFFER_DEPTH:0]
+  with 'BUFFER_DEPTH' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_clkgen.sv, 42
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: counter_next = 0;
+  Expression: counter_next
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_clkgen.sv, 51
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: counter_next = (counter + 1);
+  Expression: counter_next
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_clkgen.sv, 60
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: counter_trgt <= 'b0;
+  Expression: counter_trgt
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_clkgen.sv, 61
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 8-bit LHS target:
+  Source info: counter <= 'b0;
+  Expression: counter
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_tx.sv, 84
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_next = (counter + 1);
+  Expression: counter_next
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_tx.sv, 88
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_next = 0;
+  Expression: counter_next
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_tx.sv, 116
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter <= 0;
+  Expression: counter
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_tx.sv, 117
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_trgt <= 'h00000008;
+  Expression: counter_trgt
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_tx.sv, 59
+spi_master_tx, "(counter == (counter_trgt - 1))"
+  A left 16-bit expression is compared to a right 32-bit expression.
+  Comparing 'counter' of type logic [15:0]
+  with '(counter_trgt - 1)' of type logic [31:0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_rx.sv, 79
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_next = (counter + 1);
+  Expression: counter_next
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_rx.sv, 87
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_next = 0;
+  Expression: counter_next
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_rx.sv, 125
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter <= 0;
+  Expression: counter
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_rx.sv, 126
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_trgt <= 'h00000008;
+  Expression: counter_trgt
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_rx.sv, 55
+spi_master_rx, "(counter == (counter_trgt - 1))"
+  A left 16-bit expression is compared to a right 32-bit expression.
+  Comparing 'counter' of type logic [15:0]
+  with '(counter_trgt - 1)' of type logic [31:0].
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_controller.sv, 31
+  Following is an unused input.
+  Source info: spi_swrst
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_controller.sv, 222
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 14-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_tx = {8'b0, spi_cmd_len};
+  Expression: counter_tx
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_controller.sv, 232
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 14-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_tx = {8'b0, spi_addr_len};
+  Expression: counter_tx
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_controller.sv, 301
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 14-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: counter_tx = {8'b0, spi_addr_len};
+  Expression: counter_tx
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_apb_if.sv, 67
+  Following is an unused input.
+  Source info: spi_data_tx_ready
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/spi_master_apb_if.sv, 69
+  Following is an unused input.
+  Source info: spi_data_rx_valid
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 137
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: r_counter_tx <= 'b0;
+  Expression: r_counter_tx
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 138
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: r_counter_rx <= 'b0;
+  Expression: r_counter_rx
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 146
+apb_spi_master, "(r_counter_tx == (s_cnt_tx - 1))"
+  A left 5-bit expression is compared to a right 32-bit expression.
+  Comparing 'r_counter_tx' of type logic [LOG_BUFFER_DEPTH:0]
+  with '(s_cnt_tx - 1)' of type logic [31:0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 147
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: r_counter_tx <= 'b0;
+  Expression: r_counter_tx
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 149
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: r_counter_tx <= (r_counter_tx + 1);
+  Expression: r_counter_tx
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 153
+apb_spi_master, "(r_counter_rx == (s_cnt_rx - 1))"
+  A left 5-bit expression is compared to a right 32-bit expression.
+  Comparing 'r_counter_rx' of type logic [LOG_BUFFER_DEPTH:0]
+  with '(s_cnt_rx - 1)' of type logic [31:0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 154
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: r_counter_rx <= 'b0;
+  Expression: r_counter_rx
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 156
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: r_counter_rx <= (r_counter_rx + 1);
+  Expression: r_counter_rx
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 161
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: r_counter_tx <= 'b0;
+  Expression: r_counter_tx
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 162
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: r_counter_rx <= 'b0;
+  Expression: r_counter_rx
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 189
+apb_spi_master, "(r_counter_tx == (s_cnt_tx - 1))"
+  A left 5-bit expression is compared to a right 32-bit expression.
+  Comparing 'r_counter_tx' of type logic [LOG_BUFFER_DEPTH:0]
+  with '(s_cnt_tx - 1)' of type logic [31:0].
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/SPI/apb_spi_master.sv, 230
+apb_spi_master, "(r_counter_rx == (s_cnt_rx - 1))"
+  A left 5-bit expression is compared to a right 32-bit expression.
+  Comparing 'r_counter_rx' of type logic [LOG_BUFFER_DEPTH:0]
+  with '(s_cnt_rx - 1)' of type logic [31:0].
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv, 58
+timer, "(prescaler_int == cycle_counter_q)"
+  A left 3-bit expression is compared to a right 32-bit expression.
+  Comparing 'prescaler_int' of type logic [2:0]
+  with 'cycle_counter_q' of type logic [31:0].
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv, 62
+timer, "(prescaler_int == cycle_counter_q)"
+  A left 3-bit expression is compared to a right 32-bit expression.
+  Comparing 'prescaler_int' of type logic [2:0]
+  with 'cycle_counter_q' of type logic [31:0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv, 76
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 1-bit wide expression is assigned to a 32-bit LHS target:
+  Source info: regs_n[2'b0] = 1'b0;
+  Expression: regs_n[2'b0]
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv, 77
+timer, "(prescaler_int != 'b0)"
+  A left 3-bit expression is compared to a right 32-bit expression.
+  Comparing 'prescaler_int' of type logic [2:0]
+  with ''b0' of type bit [31:0].
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv, 77
+timer, "(prescaler_int == cycle_counter_q)"
+  A left 3-bit expression is compared to a right 32-bit expression.
+  Comparing 'prescaler_int' of type logic [2:0]
+  with 'cycle_counter_q' of type logic [31:0].
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv, 81
+timer, "(regs_q[2'b1]['d5:'d3] == 'b0)"
+  A left 3-bit expression is compared to a right 32-bit expression.
+  Comparing 'regs_q[2'b1]['d5:'d3]' of type logic [5:3]
+  with ''b0' of type bit [31:0].
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv, 85
+timer, "(cycle_counter_q >= prescaler_int)"
+  A left 32-bit expression is compared to a right 3-bit expression.
+  Comparing 'cycle_counter_q' of type logic [31:0]
+  with 'prescaler_int' of type logic [2:0].
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/TIMER/timer.sv, 41
+  Continuous assignment width mismatch
+  2 bits (lhs) versus 3 bits (rhs).
+  Source info: assign register_adr = PADDR[('d2 + 2):2];  
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/WDT/apb_watchdog.sv, 94
+apb_watchdog, "(psc_counter >= ((16'b1 << prescaler_val) - 1))"
+  A left 16-bit expression is compared to a right 32-bit expression.
+  Comparing 'psc_counter' of type logic [15:0]
+  with '((16'b1 << prescaler_val) - 1)' of type bit [31:0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/WDT/apb_watchdog.sv, 97
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 16-bit LHS target:
+  Source info: psc_counter <= (psc_counter + 1);
+  Expression: psc_counter
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/WDT/apb_watchdog.sv, 104
+apb_watchdog, "(psc_counter >= ((16'b1 << prescaler_val) - 1))"
+  A left 16-bit expression is compared to a right 32-bit expression.
+  Comparing 'psc_counter' of type logic [15:0]
+  with '((16'b1 << prescaler_val) - 1)' of type bit [31:0].
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/apb_interconnect.sv, 67
+apb_interconnect, "(slave_sel < NUM_SLAVES)"
+  A left 3-bit expression is compared to a right 32-bit expression.
+  Comparing 'slave_sel' of type logic [(SLAVE_SEL_BITS - 1):0]
+  with 'NUM_SLAVES' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/apb_interconnect.sv, 89
+apb_interconnect, "(slave_sel < NUM_SLAVES)"
+  A left 3-bit expression is compared to a right 32-bit expression.
+  Comparing 'slave_sel' of type logic [(SLAVE_SEL_BITS - 1):0]
+  with 'NUM_SLAVES' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/roundcounter.v, 12
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: ctr <= 0;
+  Expression: ctr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/roundcounter.v, 15
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: ctr <= 0;
+  Expression: ctr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/roundcounter.v, 17
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: ctr <= (ctr + 1);
+  Expression: ctr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v, 29
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: x0_q <= 0;
+  Expression: x0_q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v, 30
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: x1_q <= 0;
+  Expression: x1_q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v, 31
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: x2_q <= 0;
+  Expression: x2_q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v, 32
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: x3_q <= 0;
+  Expression: x3_q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v, 33
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: x4_q <= 0;
+  Expression: x4_q
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v, 34
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: Done <= 0;
+  Expression: Done
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v, 50
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: Done <= 1;
+  Expression: Done
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Permutation.v, 52
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: Done <= 0;
+  Expression: Done
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 80
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= IDLE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 81
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 320-bit LHS target:
+  Source info: S <= 0;
+  Expression: S
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 82
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag <= 0;
+  Expression: Tag
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 83
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C <= 0;
+  Expression: C
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 84
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= 0;
+  Expression: block_ctr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 93
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= INITIALIZE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 99
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= ASSOCIATED_DATA;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 101
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= PTCT;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 103
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= FINALIZE;
+  Expression: state
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 109
+Encryption, "(block_ctr == (s - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(s - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 111
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= PTCT;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 113
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= FINALIZE;
+  Expression: state
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 116
+Encryption, "(block_ctr != s)"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with 's' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 119
+Encryption, "(block_ctr == (s - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(s - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 120
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= 0;
+  Expression: block_ctr
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 121
+Encryption, "(block_ctr != s)"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with 's' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 122
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= (block_ctr + 1);
+  Expression: block_ctr
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 126
+Encryption, "(block_ctr == (t - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(t - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 127
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= FINALIZE;
+  Expression: state
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 131
+Encryption, "(block_ctr != t)"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with 't' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 136
+Encryption, "(block_ctr == (t - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(t - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 137
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= 0;
+  Expression: block_ctr
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 138
+Encryption, "(block_ctr != t)"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with 't' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 139
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= (block_ctr + 1);
+  Expression: block_ctr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 145
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= DONE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 152
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= IDLE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 156
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= IDLE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 164
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C_d = 0;
+  Expression: C_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 165
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 166
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: encryption_ready_1 = 0;
+  Expression: encryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 167
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = 0;
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 168
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 174
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C_d = 0;
+  Expression: C_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 175
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 176
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: encryption_ready_1 = 0;
+  Expression: encryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 177
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = 0;
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 178
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 183
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C_d = 0;
+  Expression: C_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 184
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 185
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: encryption_ready_1 = 0;
+  Expression: encryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 186
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 192
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C_d = 0;
+  Expression: C_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 193
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 194
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: encryption_ready_1 = 0;
+  Expression: encryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 195
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = b;
+  Expression: rounds
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 196
+Encryption, "(block_ctr == (s - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(s - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 196
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = ((permutation_ready && (block_ctr == (s - 
+  1))) ? 0 : 1);
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 201
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C_d = 0;
+  Expression: C_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 202
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 203
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: encryption_ready_1 = 0;
+  Expression: encryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 204
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = b;
+  Expression: rounds
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 207
+Encryption, "(block_ctr == (t - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(t - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 207
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = ((block_ctr == (t - 1)) ? 0 : 1);
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 211
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C_d = 0;
+  Expression: C_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 212
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: encryption_ready_1 = 0;
+  Expression: encryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 213
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 220
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C_d = 0;
+  Expression: C_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 221
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 222
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: encryption_ready_1 = 1;
+  Expression: encryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 223
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 224
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 320-bit LHS target:
+  Source info: P_in = 0;
+  Expression: P_in
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 225
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = 0;
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 229
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: C_d = 0;
+  Expression: C_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 230
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 231
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = 0;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 233
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = 0;
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Encryption.v, 234
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: encryption_ready_1 = 0;
+  Expression: encryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 79
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= IDLE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 80
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 320-bit LHS target:
+  Source info: S <= 0;
+  Expression: S
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 81
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag <= 0;
+  Expression: Tag
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 82
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P <= 0;
+  Expression: P
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 83
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= 0;
+  Expression: block_ctr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 92
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= INITIALIZE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 98
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= ASSOCIATED_DATA;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 100
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= CTPT;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 102
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= FINALIZE;
+  Expression: state
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 108
+Decryption, "(block_ctr == (s - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(s - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 110
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= CTPT;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 112
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= FINALIZE;
+  Expression: state
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 115
+Decryption, "(block_ctr != s)"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with 's' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 118
+Decryption, "(block_ctr == (s - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(s - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 119
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= 0;
+  Expression: block_ctr
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 120
+Decryption, "(block_ctr != s)"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with 's' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 121
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= (block_ctr + 1);
+  Expression: block_ctr
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 125
+Decryption, "(block_ctr == (t - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(t - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 126
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= FINALIZE;
+  Expression: state
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 133
+Decryption, "(block_ctr != t)"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with 't' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 138
+Decryption, "(block_ctr == (t - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(t - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 139
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= 0;
+  Expression: block_ctr
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 140
+Decryption, "(block_ctr != t)"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with 't' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 141
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: block_ctr <= (block_ctr + 1);
+  Expression: block_ctr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 147
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= DONE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 154
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= IDLE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 158
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 3-bit LHS target:
+  Source info: state <= IDLE;
+  Expression: state
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 166
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P_d = 0;
+  Expression: P_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 167
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 168
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: decryption_ready_1 = 0;
+  Expression: decryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 169
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = 0;
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 170
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 176
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P_d = 0;
+  Expression: P_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 177
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 178
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: decryption_ready_1 = 0;
+  Expression: decryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 179
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = 0;
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 180
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 185
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P_d = 0;
+  Expression: P_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 186
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 187
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: decryption_ready_1 = 0;
+  Expression: decryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 188
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 194
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P_d = 0;
+  Expression: P_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 195
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 196
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: decryption_ready_1 = 0;
+  Expression: decryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 197
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = b;
+  Expression: rounds
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 198
+Decryption, "(block_ctr == (s - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(s - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 198
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = ((permutation_ready && (block_ctr == (s - 
+  1))) ? 0 : 1);
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 203
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P_d = 0;
+  Expression: P_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 204
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 205
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: decryption_ready_1 = 0;
+  Expression: decryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 206
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = b;
+  Expression: rounds
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 209
+Decryption, "(block_ctr == (t - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'block_ctr' of type reg [t:0]
+  with '(t - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 209
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = ((block_ctr == (t - 1)) ? 0 : 1);
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 213
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P_d = 0;
+  Expression: P_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 214
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: decryption_ready_1 = 0;
+  Expression: decryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 215
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 222
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P_d = 0;
+  Expression: P_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 223
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 224
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: decryption_ready_1 = 1;
+  Expression: decryption_ready_1
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 225
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = a;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 226
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 320-bit LHS target:
+  Source info: P_in = 0;
+  Expression: P_in
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 227
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = 0;
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 231
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: P_d = 0;
+  Expression: P_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 232
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: Tag_d = 0;
+  Expression: Tag_d
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 233
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 5-bit LHS target:
+  Source info: rounds = 0;
+  Expression: rounds
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 235
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: permutation_start = 0;
+  Expression: permutation_start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Decryption.v, 236
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: decryption_ready_1 = 0;
+  Expression: decryption_ready_1
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/Ascon.v, 56
+  Continuous assignment width mismatch
+  1 bits (lhs) versus 32 bits (rhs).
+  Source info: assign message_authentication = (decryption_ready ? (dec_tag ==
+  tag) : 0);  
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v, 39
+  Following is an unused input.
+  Source info: S_AXI_AWPROT
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v, 72
+  Following is an unused input.
+  Source info: S_AXI_ARPROT
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v, 168
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: axi_awready <= 0;
+  Expression: axi_awready
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v, 169
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: axi_wready <= 0;
+  Expression: axi_wready
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v, 170
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: axi_bvalid <= 0;
+  Expression: axi_bvalid
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v, 171
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: axi_bresp <= 0;
+  Expression: axi_bresp
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v, 172
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 7-bit LHS target:
+  Source info: axi_awaddr <= 0;
+  Expression: axi_awaddr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v, 550
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 1-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: axi_rresp <= 1'b0;
+  Expression: axi_rresp
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic.sv, 692
+clic, "(vsid[addr_tmp[(ADDR_W - 1):2]] == (i + 1))"
+  A left 6-bit expression is compared to a right 32-bit expression.
+  Comparing 'vsid[addr_tmp[(ADDR_W - 1):2]]' of type logic [(clic_pkg::VSID_W 
+  - 1):0]
+  with '(i + 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic.sv, 754
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 4-bit LHS target:
+  Source info: mnlbits = INTCTLBITS;
+  Expression: mnlbits
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic.sv, 755
+clic, "(mclic_reg2hw.mcliccfg.mnlbits.q <= INTCTLBITS)"
+  A left 4-bit expression is compared to a right 32-bit expression.
+  Comparing 'mclic_reg2hw.mcliccfg.mnlbits.q' of type logic [3:0]
+  with 'INTCTLBITS' of type int.
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic.sv, 439
+clic, "(int_addr < N_SOURCE)"
+  A left 16-bit expression is compared to a right 32-bit expression.
+  Comparing 'int_addr' of type logic [(ADDR_W - 1):0]
+  with 'N_SOURCE' of type int.
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[0].Pa] = 0;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[1].Pa] = 1;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[2].Pa] = 2;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[3].Pa] = 3;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[4].Pa] = 4;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[5].Pa] = 5;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[6].Pa] = 6;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[7].Pa] = 7;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[8].Pa] = 8;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[9].Pa] = 9;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[10].Pa] = 10;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[11].Pa] = 11;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[12].Pa] = 12;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[13].Pa] = 13;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[14].Pa] = 14;  
+
+
+Lint-[CAWM-L] Width mismatch
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_target.sv, 118
+  Continuous assignment width mismatch
+  4 bits (lhs) versus 32 bits (rhs).
+  Source info: assign id_tree[gen_tree[4].gen_level[15].Pa] = 15;  
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv, 30
+  Following is an unused input.
+  Source info: clk_i
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/CLINT/clic_reg_adapter.sv, 31
+  Following is an unused input.
+  Source info: rst_ni
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 594
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_22: assert property(p_imem_arvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: imem_arvalid dropped before arready handshake");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 602
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_23: assert property(p_dmem_arvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_arvalid dropped before arready handshake");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 610
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_24: assert property(p_dmem_awvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_awvalid dropped before awready handshake");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 618
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_25: assert property(p_dmem_wvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_wvalid dropped before wready handshake");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 626
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_26: assert property(p_no_rresp_err) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: imem RRESP error response received");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 633
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_27: assert property(p_no_bresp_err) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem BRESP error response received");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 641
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_28: assert property(p_stall_flush_mutex) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: stall_IF and flush_DE both active");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 649
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_29: assert property(p_x0_zero) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: x0 is not zero");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 657
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_30: assert property(p_pc_aligned) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: PC not 4-byte aligned");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[31].qe && 
+  s_reg2hw.intrpt_status[31].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[31].qe) && ((s_reg2hw.gpio_set[31].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[31].qe) && ((s_reg2hw.gpio_clear[31].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[31].qe) && ((s_reg2hw.gpio_toggle[31].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[31]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[30].qe && 
+  s_reg2hw.intrpt_status[30].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[30].qe) && ((s_reg2hw.gpio_set[30].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[30].qe) && ((s_reg2hw.gpio_clear[30].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[30].qe) && ((s_reg2hw.gpio_toggle[30].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[30]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[29].qe && 
+  s_reg2hw.intrpt_status[29].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[29].qe) && ((s_reg2hw.gpio_set[29].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[29].qe) && ((s_reg2hw.gpio_clear[29].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[29].qe) && ((s_reg2hw.gpio_toggle[29].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[29]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[28].qe && 
+  s_reg2hw.intrpt_status[28].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[28].qe) && ((s_reg2hw.gpio_set[28].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[28].qe) && ((s_reg2hw.gpio_clear[28].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[28].qe) && ((s_reg2hw.gpio_toggle[28].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[28]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[27].qe && 
+  s_reg2hw.intrpt_status[27].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[27].qe) && ((s_reg2hw.gpio_set[27].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[27].qe) && ((s_reg2hw.gpio_clear[27].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[27].qe) && ((s_reg2hw.gpio_toggle[27].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[27]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[26].qe && 
+  s_reg2hw.intrpt_status[26].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[26].qe) && ((s_reg2hw.gpio_set[26].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[26].qe) && ((s_reg2hw.gpio_clear[26].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[26].qe) && ((s_reg2hw.gpio_toggle[26].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[26]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[25].qe && 
+  s_reg2hw.intrpt_status[25].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[25].qe) && ((s_reg2hw.gpio_set[25].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[25].qe) && ((s_reg2hw.gpio_clear[25].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[25].qe) && ((s_reg2hw.gpio_toggle[25].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[25]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[24].qe && 
+  s_reg2hw.intrpt_status[24].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[24].qe) && ((s_reg2hw.gpio_set[24].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[24].qe) && ((s_reg2hw.gpio_clear[24].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[24].qe) && ((s_reg2hw.gpio_toggle[24].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[24]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[23].qe && 
+  s_reg2hw.intrpt_status[23].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[23].qe) && ((s_reg2hw.gpio_set[23].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[23].qe) && ((s_reg2hw.gpio_clear[23].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[23].qe) && ((s_reg2hw.gpio_toggle[23].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[23]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[22].qe && 
+  s_reg2hw.intrpt_status[22].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[22].qe) && ((s_reg2hw.gpio_set[22].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[22].qe) && ((s_reg2hw.gpio_clear[22].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[22].qe) && ((s_reg2hw.gpio_toggle[22].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[22]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[21].qe && 
+  s_reg2hw.intrpt_status[21].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[21].qe) && ((s_reg2hw.gpio_set[21].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[21].qe) && ((s_reg2hw.gpio_clear[21].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[21].qe) && ((s_reg2hw.gpio_toggle[21].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[21]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[20].qe && 
+  s_reg2hw.intrpt_status[20].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[20].qe) && ((s_reg2hw.gpio_set[20].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[20].qe) && ((s_reg2hw.gpio_clear[20].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[20].qe) && ((s_reg2hw.gpio_toggle[20].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[20]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[19].qe && 
+  s_reg2hw.intrpt_status[19].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[19].qe) && ((s_reg2hw.gpio_set[19].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[19].qe) && ((s_reg2hw.gpio_clear[19].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[19].qe) && ((s_reg2hw.gpio_toggle[19].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[19]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[18].qe && 
+  s_reg2hw.intrpt_status[18].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[18].qe) && ((s_reg2hw.gpio_set[18].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[18].qe) && ((s_reg2hw.gpio_clear[18].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[18].qe) && ((s_reg2hw.gpio_toggle[18].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[18]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[17].qe && 
+  s_reg2hw.intrpt_status[17].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[17].qe) && ((s_reg2hw.gpio_set[17].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[17].qe) && ((s_reg2hw.gpio_clear[17].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[17].qe) && ((s_reg2hw.gpio_toggle[17].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[17]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[16].qe && 
+  s_reg2hw.intrpt_status[16].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[16].qe) && ((s_reg2hw.gpio_set[16].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[16].qe) && ((s_reg2hw.gpio_clear[16].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[16].qe) && ((s_reg2hw.gpio_toggle[16].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[16]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[15].qe && 
+  s_reg2hw.intrpt_status[15].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[15].qe) && ((s_reg2hw.gpio_set[15].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[15].qe) && ((s_reg2hw.gpio_clear[15].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[15].qe) && ((s_reg2hw.gpio_toggle[15].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[15]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[14].qe && 
+  s_reg2hw.intrpt_status[14].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[14].qe) && ((s_reg2hw.gpio_set[14].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[14].qe) && ((s_reg2hw.gpio_clear[14].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[14].qe) && ((s_reg2hw.gpio_toggle[14].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[14]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[13].qe && 
+  s_reg2hw.intrpt_status[13].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[13].qe) && ((s_reg2hw.gpio_set[13].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[13].qe) && ((s_reg2hw.gpio_clear[13].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[13].qe) && ((s_reg2hw.gpio_toggle[13].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[13]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[12].qe && 
+  s_reg2hw.intrpt_status[12].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[12].qe) && ((s_reg2hw.gpio_set[12].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[12].qe) && ((s_reg2hw.gpio_clear[12].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[12].qe) && ((s_reg2hw.gpio_toggle[12].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[12]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[11].qe && 
+  s_reg2hw.intrpt_status[11].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[11].qe) && ((s_reg2hw.gpio_set[11].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[11].qe) && ((s_reg2hw.gpio_clear[11].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[11].qe) && ((s_reg2hw.gpio_toggle[11].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[11]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[10].qe && 
+  s_reg2hw.intrpt_status[10].q)}) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", 
+  "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[10].qe) && ((s_reg2hw.gpio_set[10].q !== 1'bx) 
+  | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[10].qe) && ((s_reg2hw.gpio_clear[10].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[10].qe) && ((s_reg2hw.gpio_toggle[10].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[10]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[9].qe && s_reg2hw.intrpt_status[9].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[9].qe) && ((s_reg2hw.gpio_set[9].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[9].qe) && ((s_reg2hw.gpio_clear[9].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[9].qe) && ((s_reg2hw.gpio_toggle[9].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[9]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[8].qe && s_reg2hw.intrpt_status[8].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[8].qe) && ((s_reg2hw.gpio_set[8].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[8].qe) && ((s_reg2hw.gpio_clear[8].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[8].qe) && ((s_reg2hw.gpio_toggle[8].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[8]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[7].qe && s_reg2hw.intrpt_status[7].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[7].qe) && ((s_reg2hw.gpio_set[7].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[7].qe) && ((s_reg2hw.gpio_clear[7].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[7].qe) && ((s_reg2hw.gpio_toggle[7].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[7]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[6].qe && s_reg2hw.intrpt_status[6].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[6].qe) && ((s_reg2hw.gpio_set[6].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[6].qe) && ((s_reg2hw.gpio_clear[6].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[6].qe) && ((s_reg2hw.gpio_toggle[6].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[6]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[5].qe && s_reg2hw.intrpt_status[5].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[5].qe) && ((s_reg2hw.gpio_set[5].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[5].qe) && ((s_reg2hw.gpio_clear[5].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[5].qe) && ((s_reg2hw.gpio_toggle[5].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[5]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[4].qe && s_reg2hw.intrpt_status[4].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[4].qe) && ((s_reg2hw.gpio_set[4].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[4].qe) && ((s_reg2hw.gpio_clear[4].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[4].qe) && ((s_reg2hw.gpio_toggle[4].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[4]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[3].qe && s_reg2hw.intrpt_status[3].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[3].qe) && ((s_reg2hw.gpio_set[3].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[3].qe) && ((s_reg2hw.gpio_clear[3].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[3].qe) && ((s_reg2hw.gpio_toggle[3].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[3]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[2].qe && s_reg2hw.intrpt_status[2].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[2].qe) && ((s_reg2hw.gpio_set[2].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[2].qe) && ((s_reg2hw.gpio_clear[2].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[2].qe) && ((s_reg2hw.gpio_toggle[2].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[2]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[1].qe && s_reg2hw.intrpt_status[1].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[1].qe) && ((s_reg2hw.gpio_set[1].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[1].qe) && ((s_reg2hw.gpio_clear[1].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[1].qe) && ((s_reg2hw.gpio_toggle[1].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[1]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 209
+gpio
+  Unnamed Assertion found in design
+  \assert((((^{(s_reg2hw.intrpt_status[0].qe && s_reg2hw.intrpt_status[0].q)})
+  !== 1'bx) | (rst_ni !== 1'b1))) else $error("Condition: %s = X in instance 
+  %m.", "{s_reg2hw.intrpt_status[gpio_idx].qe && 
+  s_reg2hw.intrpt_status[gpio_idx].q}");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 190
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_set[0].qe) && ((s_reg2hw.gpio_set[0].q !== 1'bx) | 
+  (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance %m.", 
+  "s_reg2hw.gpio_set[gpio_idx].qe && s_reg2hw.gpio_set[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 194
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_clear[0].qe) && ((s_reg2hw.gpio_clear[0].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_clear[gpio_idx].qe && 
+  s_reg2hw.gpio_clear[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 198
+gpio
+  Unnamed Assertion found in design
+  \assert(((^s_reg2hw.gpio_toggle[0].qe) && ((s_reg2hw.gpio_toggle[0].q !== 
+  1'bx) | (rst_ni !== 1'b1)))) else $error("Condition: %s = X in instance 
+  %m.", "s_reg2hw.gpio_toggle[gpio_idx].qe && 
+  s_reg2hw.gpio_toggle[gpio_idx].q");
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 161
+gpio
+  Unnamed Assertion found in design
+  \assert((((^s_reg2hw.gpio_mode[0]) !== 1'bx) | (rst_ni !== 1'b1))) else 
+  $error("Condition: %s = X in instance %m.", "s_reg2hw.gpio_mode[gpio_idx]");
+
+
+Lint-[PCTI-L] Ports coerced to input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/Peripherals/GPIO/gpio.sv, 256
+"reg_bus"
+  Port "reg_bus" declared as inout in module "gpio_intf" does not have any 
+  load in parent module or is connected to constant, it may need to be input. 
+  Coercing to input.
+
+
+Lint-[PCTI-L] Ports coerced to input
+/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut/peripherals/includes/apb_to_reg.sv, 22
+"reg_o"
+  Port "reg_o" declared as inout in module "apb_to_reg" does not have any load
+  in parent module or is connected to constant, it may need to be input. 
+  Coercing to input.
+
+Starting vcs inline pass...
+
+39 modules and 0 UDP read.
+Generating code for _VCSgd_reYIK
+Generating code for _VCSgd_LGEhm
+Generating code for _VCSgd_C26kq
+recompiling module alu
+Generating code for _VCSgd_WE3J7
+recompiling module branch_cmp
+Generating code for _VCSgd_aCwQk
+recompiling module imm_gen
+Generating code for _VCSgd_zZrks
+recompiling module register_file
+Generating code for _VCSgd_djdU1
+recompiling module axi4_imem_slave
+Generating code for _VCSgd_sKcaG
+recompiling module axi4_dmem_slave
+Generating code for _VCSgd_bciyB
+recompiling module rv32_core_top
+Generating code for _VCSgd_QNVjF
+recompiling module axi4_to_apb_bridge
+Generating code for _VCSgd_N2nk1
+recompiling package cf_math_pkg
+Generating code for _VCSgd_LMmv7
+recompiling module REG_BUS
+Generating code for _VCSgd_FdZCL
+recompiling module apb_to_reg
+Generating code for _VCSgd_p5ADd
+recompiling package gpio_reg_pkg
+Generating code for _VCSgd_eiIGv
+recompiling module gpio_input_stage
+Generating code for _VCSgd_twicH
+recompiling package top_pkg
+Generating code for _VCSgd_rKIkK
+recompiling package tlul_pkg
+Generating code for _VCSgd_g0m4t
+recompiling module prim_subreg
+Generating code for _VCSgd_KKQL2
+Generating code for _VCSgd_eYCZ3
+Generating code for _VCSgd_eT9FL
+Generating code for _VCSgd_TzhNA
+Generating code for _VCSgd_BJTAz
+Generating code for _VCSgd_S6E7t
+Generating code for _VCSgd_rdA01
+recompiling module prim_subreg_ext
+Generating code for _VCSgd_h9SmE
+Generating code for _VCSgd_WuuAZ
+Generating code for _VCSgd_tnLH5
+Generating code for _VCSgd_smRL9
+recompiling package rv_plic_reg_pkg
+Generating code for _VCSgd_RBDvr
+recompiling module rv_plic_target
+Generating code for _VCSgd_tViey
+recompiling module plic_top
+Generating code for _VCSgd_QPHDH
+recompiling package clic_pkg
+Generating code for _VCSgd_qqEG7
+recompiling package clicint_reg_pkg
+Generating code for _VCSgd_c98Pw
+recompiling module clicint_reg_top
+Generating code for _VCSgd_wQQYA
+recompiling package clicintv_reg_pkg
+Generating code for _VCSgd_a7Apx
+recompiling package clicvs_reg_pkg
+Generating code for _VCSgd_BddYj
+recompiling package mclic_reg_pkg
+Generating code for _VCSgd_sIKrz
+recompiling module clic_target
+Generating code for _VCSgd_qt3UD
+recompiling module clic_apb
+Generating code for _VCSgd_zhpzx
+recompiling module clic_reg_adapter
+Generating code for _VCSgd_kZhCT
+recompiling module apb_uart
+Generating code for _VCSgd_GMeK8
+recompiling module spi_master_fifo
+Generating code for _VCSgd_uUgCN
+Generating code for _VCSgd_ftnmP
+recompiling module apb_spi_master
+Generating code for _VCSgd_t5sdY
+recompiling module timer
+Generating code for _VCSgd_Wifbi
+recompiling module apb_timer
+Generating code for _VCSgd_yiUbr
+recompiling module apb_watchdog
+Generating code for _VCSgd_hjzcm
+recompiling module Permutation
+Generating code for _VCSgd_zE6EK
+recompiling module ascon_axi
+Generating code for _VCSgd_RaPkC
+recompiling module soc_top
+38 of 39 modules done
+	However, due to incremental compilation, only 38 modules need to be compiled. 
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/home/ti_ml/SMDP/Synopsys/vcs/vcs/U-2023.03/linux64/lib -L/home/ti_ml/SMDP/Synopsys/vcs/vcs/U-2023.03/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _249035_archive_1.so _prev_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /home/ti_ml/SMDP/Synopsys/vcs/vcs/U-2023.03/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /home/ti_ml/SMDP/Synopsys/vcs/vcs/U-2023.03/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: 1.406 seconds to compile + .198 seconds to elab + .114 seconds to link

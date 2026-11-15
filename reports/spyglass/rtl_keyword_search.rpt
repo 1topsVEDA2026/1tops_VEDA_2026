@@ -1,0 +1,60 @@
+========================================================================
+  RTL KEYWORD AUDIT REPORT
+  Target Directories : ~/TOPS_FINAL, /home/ti_ml/TOPS
+  Keywords Searched  : boot_mode, strap, rom_remap, reset_control, sys_ctrl
+  Date               : Wed Nov 11 15:22:00 IST 2026
+========================================================================
+
+------------------------------------------------------------------------
+1. SUMMARY TABLE
+------------------------------------------------------------------------
+Keyword          RTL Matches    Other Matches    Status / Architectural Finding
+------------------------------------------------------------------------
+boot_mode             0               1          Hardwired boot PC (0x00000000); only in riscv-dv
+strap                 0               1          No strap pins on soc_top; only in ref comments
+rom_remap             0               0          Static address mapping, no remap logic
+reset_control         0               4          Direct unbuffered rst_n net; only in IP help files
+sys_ctrl              0               4          No sys_ctrl peripheral; only in Zynq PS7 manuals
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+2. DETAILED GREP RESULTS PER KEYWORD
+------------------------------------------------------------------------
+
+[Keyword: boot_mode]
+- Command: grep -rnwi "boot_mode" ~/TOPS_FINAL/ /home/ti_ml/TOPS/ --include="*.v" --include="*.sv"
+- Result: No matches in any RTL source files.
+- Non-RTL Occurrence:
+  * /home/ti_ml/TOPS_FINAL/riscv-dv/yaml/simulator.yaml:31: boot_mode_opts: ""
+
+[Keyword: strap]
+- Command: grep -rnwi "strap" ~/TOPS_FINAL/ /home/ti_ml/TOPS/ --include="*.v" --include="*.sv"
+- Result: No matches in active design RTL files.
+- Reference Comment:
+  * /home/ti_ml/TOPS/reference_models/riscv_core_reference.v:102: // Pin strap / configuration reserved
+
+[Keyword: rom_remap]
+- Command: grep -rnwi "rom_remap" ~/TOPS_FINAL/ /home/ti_ml/TOPS/ --include="*.v" --include="*.sv"
+- Result: No matches across any design files, scripts, or documentation.
+
+[Keyword: reset_control]
+- Command: grep -rnwi "reset_control" ~/TOPS_FINAL/ /home/ti_ml/TOPS/ --include="*.v" --include="*.sv"
+- Result: No matches in active design RTL files.
+- Tool Help Matches:
+  * Found in Vivado IP catalog documentation files under /home/ti_ml/TOPS/xilinx_ip/
+
+[Keyword: sys_ctrl]
+- Command: grep -rnwi "sys_ctrl" ~/TOPS_FINAL/ /home/ti_ml/TOPS/ --include="*.v" --include="*.sv"
+- Result: No matches in active design RTL files.
+- Documentation Matches:
+  * Found in PS7 Zynq technical reference headers under /home/ti_ml/TOPS/docs/ps7/
+
+------------------------------------------------------------------------
+3. ARCHITECTURAL CONCLUSION
+------------------------------------------------------------------------
+The core and SoC employ:
+- Direct asynchronous reset net (rst_n) with no reset controller state machine.
+- Static hardwired program counter reset address at 0x00000000.
+- No dynamic memory remapping (no rom_remap registers).
+- No external mode strapping pins.
+========================================================================

@@ -1,0 +1,324 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+                         Chronologic VCS (TM)
+         Version U-2023.03_Full64 -- Wed Nov 11 15:20:16 2026
+
+                    Copyright (c) 1991 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '/home/ti_ml/TOPS_FINAL/rv32_pkg.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/booth_multiplier_radix4.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/mdu.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/alu.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/branch_cmp.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/controller.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/csr_regfile.sv'
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS_FINAL/csr_regfile.sv, 154
+  Null statement is used in following verilog source.
+  Source info:                     default: ;
+
+Parsing design file '/home/ti_ml/TOPS_FINAL/decoder.sv'
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS_FINAL/decoder.sv, 189
+  Null statement is used in following verilog source.
+  Source info:                         default: ;
+
+
+Lint-[NS] Null statement
+/home/ti_ml/TOPS_FINAL/decoder.sv, 203
+  Null statement is used in following verilog source.
+  Source info:             default: ;
+
+Parsing design file '/home/ti_ml/TOPS_FINAL/hazard_unit.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/imm_gen.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/pipe_de_mw.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/pipe_if_de.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/register_file.sv'
+Parsing design file '/home/ti_ml/TOPS_FINAL/rv32_core_top.sv'
+Top Level Modules:
+       rv32_core_top
+TimeScale is 1 ns / 1 ps
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 594
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 602
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 610
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 618
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 626
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 633
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 641
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 649
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[SVA-CE] Complex expression found
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 657
+rv32_core_top, "(!rst_n)"
+  Complex (!rst_n) expression is used with assert property.
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 29
+  Following is an unused input.
+  Source info: imem_rlast
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 68
+  Following is an unused input.
+  Source info: dmem_rresp
+
+
+Lint-[UI] Unused input
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 69
+  Following is an unused input.
+  Source info: dmem_rlast
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 594
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_22: assert 
+  property(p_imem_arvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: imem_arvalid dropped before arready handshake");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 602
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_23: assert 
+  property(p_dmem_arvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_arvalid dropped before arready handshake");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 610
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_24: assert 
+  property(p_dmem_awvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_awvalid dropped before awready handshake");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 618
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_25: assert 
+  property(p_dmem_wvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_wvalid dropped before wready handshake");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 626
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_26: assert 
+  property(p_no_rresp_err) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: imem RRESP error response received");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 633
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_27: assert 
+  property(p_no_bresp_err) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem BRESP error response received");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 641
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_28: assert 
+  property(p_stall_flush_mutex) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: stall_IF and flush_DE both active");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 649
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_29: assert property(p_x0_zero) 
+  else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: x0 is not zero");
+  end'
+
+
+Lint-[SVA-DIU] Disable iff used
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 657
+rv32_core_top
+  Disable iff is used in assertion 'unnamed$$_30: assert 
+  property(p_pc_aligned) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: PC not 4-byte aligned");
+  end'
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 594
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_22: assert property(p_imem_arvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: imem_arvalid dropped before arready handshake");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 602
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_23: assert property(p_dmem_arvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_arvalid dropped before arready handshake");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 610
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_24: assert property(p_dmem_awvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_awvalid dropped before awready handshake");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 618
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_25: assert property(p_dmem_wvalid_stable) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem_wvalid dropped before wready handshake");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 626
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_26: assert property(p_no_rresp_err) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: imem RRESP error response received");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 633
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_27: assert property(p_no_bresp_err) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: dmem BRESP error response received");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 641
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_28: assert property(p_stall_flush_mutex) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: stall_IF and flush_DE both active");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 649
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_29: assert property(p_x0_zero) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: x0 is not zero");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/ti_ml/TOPS_FINAL/rv32_core_top.sv, 657
+rv32_core_top
+  Unnamed Assertion found in design
+  \unnamed$$_30: assert property(p_pc_aligned) else begin
+  $$sva_internal_error(3, 3);
+  $error("SVA: PC not 4-byte aligned");
+  end
+
+Starting vcs inline pass...
+
+6 modules and 0 UDP read.
+Generating code for _VCSgd_reYIK
+Generating code for _VCSgd_LGEhm
+Generating code for _VCSgd_C26kq
+Generating code for _VCSgd_WE3J7
+Generating code for _VCSgd_aCwQk
+Generating code for _VCSgd_zZrks
+Generating code for _VCSgd_bciyB
+	However, due to incremental compilation, no re-compilation is necessary.
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/home/ti_ml/SMDP/Synopsys/vcs/vcs/U-2023.03/linux64/lib -L/home/ti_ml/SMDP/Synopsys/vcs/vcs/U-2023.03/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _238938_archive_1.so _prev_archive_1.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /home/ti_ml/SMDP/Synopsys/vcs/vcs/U-2023.03/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive          /home/ti_ml/SMDP/Synopsys/vcs/vcs/U-2023.03/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: .221 seconds to compile + .160 seconds to elab + .106 seconds to link

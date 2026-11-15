@@ -1,0 +1,49 @@
+%Warning-EOFNEWLINE: /home/ti_ml/TOPS_FINAL/pipe_de_mw.sv:97:10: Missing newline at end of file (POSIX 3.206).
+                                                               : ... Suggest add newline.
+   97 | endmodule
+      |          ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.026
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Warning-EOFNEWLINE: /home/ti_ml/TOPS_FINAL/pipe_if_de.sv:63:10: Missing newline at end of file (POSIX 3.206).
+                                                               : ... Suggest add newline.
+   63 | endmodule
+      |          ^
+%Warning-UNUSEDSIGNAL: /home/ti_ml/TOPS_FINAL/rv32_core_top.sv:29:25: Signal is not used: 'imem_rlast'
+                                                                    : ... note: In instance 'rv32_core_top'
+   29 |     input  logic        imem_rlast,
+      |                         ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/ti_ml/TOPS_FINAL/rv32_core_top.sv:68:25: Signal is not used: 'dmem_rresp'
+                                                                    : ... note: In instance 'rv32_core_top'
+   68 |     input  logic [ 1:0] dmem_rresp,
+      |                         ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/ti_ml/TOPS_FINAL/rv32_core_top.sv:69:25: Signal is not used: 'dmem_rlast'
+                                                                    : ... note: In instance 'rv32_core_top'
+   69 |     input  logic        dmem_rlast,
+      |                         ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/ti_ml/TOPS_FINAL/rv32_core_top.sv:230:16: Signal is not used: 'csr_rd_DE'
+                                                                     : ... note: In instance 'rv32_core_top'
+  230 |     logic      csr_rd_DE, csr_wr_DE, csr_imm_sel;
+      |                ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/ti_ml/TOPS_FINAL/rv32_core_top.sv:353:18: Signal is not used: 'pc_out_MW'
+                                                                     : ... note: In instance 'rv32_core_top'
+  353 |     logic [31:0] pc_out_MW;
+      |                  ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/ti_ml/TOPS_FINAL/mdu.sv:106:18: Bits of signal are not used: 'mul_prod_s2'[65:64]
+                                                           : ... note: In instance 'rv32_core_top.u_mdu'
+  106 |     logic [65:0] mul_prod_s2;   
+      |                  ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/ti_ml/TOPS_FINAL/mdu.sv:213:18: Bits of signal are not used: 'remainder_r'[32]
+                                                           : ... note: In instance 'rv32_core_top.u_mdu'
+  213 |     logic [32:0] remainder_r;    
+      |                  ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /home/ti_ml/TOPS_FINAL/imm_gen.sv:5:25: Bits of signal are not used: 'inst'[6:0]
+                                                             : ... note: In instance 'rv32_core_top.u_imm_gen'
+    5 |     input  logic [31:0] inst,
+      |                         ^~~~
+%Warning-UNOPTFLAT: /home/ti_ml/TOPS_FINAL/booth_multiplier_radix4.sv:107:32: Signal unoptimizable: Circular combinational logic: 'rv32_core_top.u_mdu.u_booth_mul.tree_stage'
+  107 |     logic signed [2*WIDTH-1:0] tree_stage [0:TREE_DEPTH][0:NUM_PP-1];
+      |                                ^~~~~~~~~~
+                    /home/ti_ml/TOPS_FINAL/booth_multiplier_radix4.sv:107:32:      Example path: rv32_core_top.u_mdu.u_booth_mul.tree_stage
+                    /home/ti_ml/TOPS_FINAL/booth_multiplier_radix4.sv:124:47:      Example path: ASSIGNW
+                    /home/ti_ml/TOPS_FINAL/booth_multiplier_radix4.sv:107:32:      Example path: rv32_core_top.u_mdu.u_booth_mul.tree_stage
+%Error: Exiting due to 11 warning(s)

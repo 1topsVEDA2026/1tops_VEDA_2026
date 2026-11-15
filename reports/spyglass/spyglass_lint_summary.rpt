@@ -1,0 +1,72 @@
+========================================================================
+  SPYGLASS LINT / RTL QUALITY AUDIT REPORT
+  Module  : rv32_core_top
+  Date    : Wed Nov 11 15:20:16 IST 2026
+  Goal    : lint/lint_rtl
+========================================================================
+
+------------------------------------------------------------------------
+  1. CORE RTL FILES AUDITED
+------------------------------------------------------------------------
+  - Package definitions : rv32_pkg.sv
+  - ALU                 : alu.sv
+  - Decoder             : decoder.sv
+  - Control Unit        : controller.sv
+  - Register File       : register_file.sv
+  - Hazard Unit         : hazard_unit.sv
+  - Multiplier & MDU    : booth_multiplier_radix4.sv, mdu.sv
+  - Branch Unit         : branch_cmp.sv
+  - CSR Registers       : csr_regfile.sv
+  - Immediate Generator : imm_gen.sv
+  - Pipeline Registers  : pipe_if_de.sv, pipe_de_mw.sv
+  - Program Counter     : rv32_core_top.sv (Integrated IF logic)
+  - Load / Store Unit   : decoder.sv, controller.sv, rv32_core_top.sv
+  - Core Top Module     : rv32_core_top.sv
+
+------------------------------------------------------------------------
+  2. LINT VIOLATION SUMMARY
+------------------------------------------------------------------------
+
+[Synopsys VCS Lint Summary]
+      3 Lint-[NS] Null statement
+      9 Lint-[SVA-CE] Complex expression found
+      9 Lint-[SVA-DIU] Disable iff used
+      9 Lint-[SVA-UA] Unnamed Assertion
+      3 Lint-[UI] Unused input
+
+[Verilator Lint Summary]
+      2 %Warning-EOFNEWLINE:
+      1 %Warning-UNOPTFLAT:
+      8 %Warning-UNUSEDSIGNAL:
+
+------------------------------------------------------------------------
+  3. DETAILED VIOLATIONS BY CATEGORY
+------------------------------------------------------------------------
+
+A. LATCH INFERENCE IN ALWAYS_FF BLOCKS
+   File   : csr_regfile.sv:106
+   Signal : mip[31:12], mip[10:8], mip[6:4], mip[2:0]
+   Issue  : Incomplete assignment to 'mip' register bits in always_ff block
+            creates implicit latch / unassigned bit holding.
+
+B. CIRCULAR COMBINATIONAL / UNOPTIMIZABLE LOGIC
+   File   : booth_multiplier_radix4.sv:107
+   Signal : tree_stage [0:TREE_DEPTH][0:NUM_PP-1]
+   Issue  : Wallace/Dadda adder tree array indexing triggers circular path
+            combinational dependency warning (UNOPTFLAT).
+
+C. UNUSED PORTS & SIGNALS (AXI & Control)
+   - imem_rlast (rv32_core_top.sv:29) : Instruction read burst last flag unused.
+   - dmem_rresp (rv32_core_top.sv:68) : Data read response bus unused.
+   - dmem_rlast (rv32_core_top.sv:69) : Data read burst last flag unused.
+   - csr_rd_DE  (rv32_core_top.sv:230): Decode CSR read control signal unused.
+   - pc_out_MW  (rv32_core_top.sv:353): Pipeline MW stage PC unused.
+   - inst[6:0]  (imm_gen.sv:5)        : Opcode bits unused by immediate generator.
+
+D. COMPLEX ASSERTION EXPRESSIONS
+   File   : rv32_core_top.sv:594
+   Issue  : Complex reset assertion '!rst_n' in concurrent SVA property.
+
+========================================================================
+  END OF REPORT
+========================================================================
