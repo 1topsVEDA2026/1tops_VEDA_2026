@@ -1,0 +1,29 @@
+========================================================================
+  Spike ISS vs RTL — riscv_arithmetic_basic_test_0
+========================================================================
+  Spike log : /home/vlsiuser/Downloads/design_rtl_booth_mul_restoring_div/riscv_dv_env/out/tests/riscv_arithmetic_basic_test_0/spike.log
+  RTL log   : /home/vlsiuser/Downloads/design_rtl_booth_mul_restoring_div/riscv_dv_env/out/tests/riscv_arithmetic_basic_test_0/sim/rtl_trace.log
+  PC offset : 0x00000000 (Spike = RTL + offset)
+========================================================================
+
+  Spike entries (after spin removal): 12026
+  RTL entries   (after spin removal): 7027
+  Spike comparable entries: 8419
+  RTL comparable entries  : 6728
+
+  [WARNING] Entry count mismatch — comparing first 6728
+
+   #  Status         SpikePC        RTLPC  Opcode      Detail
+------------------------------------------------------------------------------------------
+
+  [INFO] 1691 extra Spike entries not matched
+
+========================================================================
+  COMPARISON SUMMARY
+    Total compared : 6728
+    PASS           : 6728
+    FAIL           : 0
+    Match rate     : 100.0%
+
+  ✅ ALL INSTRUCTIONS MATCH — riscv_arithmetic_basic_test_0 RTL matches Spike ISS
+========================================================================
