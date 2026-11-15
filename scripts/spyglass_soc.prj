@@ -1,0 +1,128 @@
+## ==============================================================================
+## SpyGlass Project File — SoC Top (soc_top)
+## Goals: lint/lint_rtl & cdc/cdc_verify
+## ==============================================================================
+
+set_option top soc_top
+set_option enableSV09 yes
+set_option language_mode mixed
+set_option allow_module_override yes
+set_option designread_enable_synthesis yes
+set_option designread_disable_flatten no
+
+set SOC_DIR "/home/ti_ml/TOPS/FUL_SOC_WITH_CORE/dut"
+set CORE_DIR "/home/ti_ml/TOPS_FINAL"
+
+set_option incdir [list \
+    ${SOC_DIR}/peripherals/includes \
+    ${SOC_DIR}/peripherals/includes/apb \
+    ${SOC_DIR}/peripherals/includes/common_cells \
+    ${SOC_DIR}/peripherals/includes/register_interface \
+    ${SOC_DIR}/peripherals/includes/obi \
+    ${CORE_DIR} \
+    ${SOC_DIR}/peripherals/Peripherals/GPIO \
+    ${SOC_DIR}/peripherals/Peripherals/PLIC \
+    ${SOC_DIR}/peripherals/Peripherals/CLINT \
+    ${SOC_DIR}/peripherals/Peripherals/UART \
+    ${SOC_DIR}/peripherals/Peripherals/SPI \
+    ${SOC_DIR}/peripherals/Peripherals/TIMER \
+    ${SOC_DIR}/peripherals/Peripherals/WDT \
+]
+
+## Core Files
+read_file -type verilog ${CORE_DIR}/rv32_pkg.sv
+read_file -type verilog ${CORE_DIR}/alu.sv
+read_file -type verilog ${CORE_DIR}/booth_multiplier_radix4.sv
+read_file -type verilog ${CORE_DIR}/mdu.sv
+read_file -type verilog ${CORE_DIR}/branch_cmp.sv
+read_file -type verilog ${CORE_DIR}/controller.sv
+read_file -type verilog ${CORE_DIR}/decoder.sv
+read_file -type verilog ${CORE_DIR}/hazard_unit.sv
+read_file -type verilog ${CORE_DIR}/imm_gen.sv
+read_file -type verilog ${CORE_DIR}/register_file.sv
+read_file -type verilog ${CORE_DIR}/csr_regfile.sv
+read_file -type verilog ${CORE_DIR}/pipe_if_de.sv
+read_file -type verilog ${CORE_DIR}/pipe_de_mw.sv
+read_file -type verilog ${CORE_DIR}/instr_mem.sv
+read_file -type verilog ${CORE_DIR}/data_mem.sv
+read_file -type verilog ${CORE_DIR}/axi4_imem_slave.sv
+read_file -type verilog ${CORE_DIR}/axi4_dmem_slave.sv
+read_file -type verilog ${CORE_DIR}/rv32_core_top.sv
+
+## Bridge
+read_file -type verilog ${SOC_DIR}/bridge/axi4_to_apb_bridge.sv
+read_file -type verilog ${SOC_DIR}/peripherals/includes/cf_math_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/includes/APB.sv
+read_file -type verilog ${SOC_DIR}/peripherals/includes/REG_BUS.sv
+read_file -type verilog ${SOC_DIR}/peripherals/includes/apb_to_reg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/includes/apb_to_reg_v2.sv
+read_file -type verilog ${SOC_DIR}/peripherals/includes/sync.sv
+
+## Peripherals
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/GPIO/gpio_reg_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/GPIO/gpio_reg_top.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/GPIO/gpio_input_stage.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/GPIO/gpio_input_stage_no_clk_gates.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/GPIO/gpio.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/GPIO/gpio_apb_wrap.sv
+
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/top_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/tlul_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/prim_subreg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/prim_subreg_ext.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/rv_plic_reg_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/rv_plic_reg_top.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/rv_plic_gateway.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/rv_plic_target.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/rv_plic.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/plic_top.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/PLIC/plic_regmap.sv
+
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clic_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clicint_reg_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clicint_reg_top.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clicintv_reg_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clicintv_reg_top.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clicvs_reg_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clicvs_reg_top.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/mclic_reg_pkg.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/mclic_reg_top.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clic_gateway.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clic_target.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clic.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clic_apb.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/CLINT/clic_reg_adapter.sv
+
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/UART/apb_uart.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/UART/reg_uart_wrap.sv
+read_file -type verilog ${SOC_DIR}/peripherals/includes/apb_uart_wrap.sv
+
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/SPI/spi_master_fifo.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/SPI/spi_master_clkgen.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/SPI/spi_master_tx.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/SPI/spi_master_rx.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/SPI/spi_master_controller.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/SPI/spi_master_apb_if.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/SPI/apb_spi_master.sv
+
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/TIMER/timer.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/TIMER/apb_timer.sv
+
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/WDT/apb_watchdog.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/apb_interconnect.sv
+read_file -type verilog ${SOC_DIR}/peripherals/Peripherals/peripheral_subsystem.sv
+
+## Ascon Cryptographic Accelerator
+read_file -type verilog ${SOC_DIR}/ascon/roundconstant.v
+read_file -type verilog ${SOC_DIR}/ascon/roundcounter.v
+read_file -type verilog ${SOC_DIR}/ascon/linear_layer.v
+read_file -type verilog ${SOC_DIR}/ascon/sub_layer.v
+read_file -type verilog ${SOC_DIR}/ascon/Permutation.v
+read_file -type verilog ${SOC_DIR}/ascon/Encryption.v
+read_file -type verilog ${SOC_DIR}/ascon/Decryption.v
+read_file -type verilog ${SOC_DIR}/ascon/Ascon.v
+read_file -type verilog ${SOC_DIR}/ascon/ascon_axi_slave_lite_v1_0_S00_AXI.v
+read_file -type verilog ${SOC_DIR}/ascon/ascon_axi.v
+
+## Top
+read_file -type verilog ${SOC_DIR}/soc_top.sv
