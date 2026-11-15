@@ -1,0 +1,45 @@
+========================================================================
+  RISC-V DV RANDOM VERIFICATION EXECUTION REPORT (RV32IM)
+  Target Architecture : RV32IM (Zicsr, Zifencei)
+  Simulator / ISS     : Synopsys VCS Generator + Spike ISS
+  Toolchain           : riscv32-unknown-elf-gcc (ilp32 ABI)
+  Date                : Wed Nov 11 15:33:15 IST 2026
+========================================================================
+
+TEST CASE: riscv_arithmetic_basic_test
+  - Status             : PASS (973 instructions matched)
+  - Instructions Run   : 973
+  - End Signature      : 0x00000001 (PASS)
+  - Assembly Source    : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_arithmetic_basic_test/asm_test/riscv_arithmetic_basic_test_0.S
+  - ELF Binary         : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_arithmetic_basic_test/riscv_arithmetic_basic_test.elf
+  - Verilog Hex        : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_arithmetic_basic_test/riscv_arithmetic_basic_test.hex
+  - Spike Trace Log    : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_arithmetic_basic_test/spike.log
+  - Trace CSV          : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_arithmetic_basic_test/spike_trace.csv
+
+TEST CASE: riscv_mext_basic_test
+  - Status             : PASS (2323 instructions matched)
+  - Instructions Run   : 2323
+  - End Signature      : 0x00000001 (PASS)
+  - Assembly Source    : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_mext_basic_test/asm_test/riscv_mext_basic_test_0.S
+  - ELF Binary         : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_mext_basic_test/riscv_mext_basic_test.elf
+  - Verilog Hex        : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_mext_basic_test/riscv_mext_basic_test.hex
+  - Spike Trace Log    : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_mext_basic_test/spike.log
+  - Trace CSV          : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_mext_basic_test/spike_trace.csv
+
+TEST CASE: riscv_rand_instr_test
+  - Status             : PASS (3904 instructions matched)
+  - Instructions Run   : 3904
+  - End Signature      : 0x00000001 (PASS)
+  - Assembly Source    : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_rand_instr_test/asm_test/riscv_rand_instr_test_0.S
+  - ELF Binary         : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_rand_instr_test/riscv_rand_instr_test.elf
+  - Verilog Hex        : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_rand_instr_test/riscv_rand_instr_test.hex
+  - Spike Trace Log    : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_rand_instr_test/spike.log
+  - Trace CSV          : /home/ti_ml/TOPS_FINAL/riscv_dv_env/out_regression/riscv_rand_instr_test/spike_trace.csv
+
+------------------------------------------------------------------------
+  FINAL REGRESSION SUMMARY
+------------------------------------------------------------------------
+  Total Tests Run : 3
+  Passed          : 3 / 3 (100% PASS)
+  Failed          : 0
+========================================================================
