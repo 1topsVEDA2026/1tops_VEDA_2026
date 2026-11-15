@@ -1,8 +1,0 @@
-# ignoring compilation artifacts
-
-transcript
-work/
-
-#ignoring simulation artifacts
-
-processor.vcd
