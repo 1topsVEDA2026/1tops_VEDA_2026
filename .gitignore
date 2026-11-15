@@ -1,0 +1,18 @@
+# Build artifacts
+sim_build/
+*.o
+*.elf
+*.dump
+*.riscv
+*.wlf
+transcript
+
+# SpyGlass work directory
+spyglass_work/
+
+# Backup files
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
