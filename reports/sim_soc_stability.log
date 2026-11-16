@@ -1,0 +1,239 @@
+# ==========================================================
+#  Step 1: Running Multi-Cycle Stability Stress Test (10 us)...
+#  Test: soc_stability_test
+# ==========================================================
+# vsim -coverage -voptargs="+acc -suppress 7061" -suppress 7061 "+UVM_TESTNAME=soc_stability_test" work.tb_top_with_core 
+# Start time: 18:37:36 on Nov 15,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.apb_if(fast)
+# Loading mtiUvm.uvm_pkg
+# Loading work.apb_pkg(fast)
+# Loading work.subsystem_pkg(fast)
+# Loading work.tb_top_with_core_sv_unit(fast)
+# Loading work.tb_top_with_core(fast)
+# Loading work.apb_if(fast)
+# Loading work.soc_top(fast)
+# Loading work.rv32_pkg(fast)
+# Loading work.rv32_core_top(fast)
+# Loading work.pipe_if_de(fast)
+# Loading work.decoder(fast)
+# Loading work.branch_cmp(fast)
+# Loading work.controller(fast)
+# Loading work.register_file(fast)
+# Loading work.imm_gen(fast)
+# Loading work.alu(fast)
+# Loading work.mdu(fast)
+# Loading work.csr_regfile(fast)
+# Loading work.pipe_de_mw(fast)
+# Loading work.hazard_unit(fast)
+# Loading work.axi4_imem_slave(fast)
+# Loading work.axi4_dmem_slave(fast)
+# Loading work.axi4_to_apb_bridge(fast)
+# Loading work.peripheral_subsystem(fast)
+# Loading work.apb_interconnect(fast)
+# Loading work.apb_uart(fast)
+# Loading work.apb_uart_wrap(fast)
+# Loading work.apb_spi_master(fast)
+# Loading work.spi_master_apb_if(fast)
+# Loading work.spi_master_fifo(fast)
+# Loading work.spi_master_controller(fast)
+# Loading work.spi_master_clkgen(fast)
+# Loading work.spi_master_tx(fast)
+# Loading work.spi_master_rx(fast)
+# Loading work.gpio_reg_pkg(fast)
+# Loading work.gpio_apb_wrap(fast)
+# Loading work.REG_BUS(fast)
+# Loading work.apb_to_reg(fast)
+# Loading work.gpio_intf(fast)
+# Loading work.gpio(fast)
+# Loading work.gpio_reg_top(fast)
+# Loading work.prim_subreg_ext(fast)
+# Loading work.prim_subreg(fast)
+# Loading work.prim_subreg(fast__1)
+# Loading work.prim_subreg_ext(fast__1)
+# Loading work.prim_subreg(fast__2)
+# Loading work.gpio_input_stage(fast)
+# Loading work.sync(fast)
+# Loading work.apb_timer(fast)
+# Loading work.timer(fast)
+# Loading work.apb_watchdog(fast)
+# Loading work.plic_top(fast)
+# Loading work.rv_plic_gateway(fast)
+# Loading work.rv_plic_target(fast)
+# Loading work.plic_regs(fast)
+# Loading work.clic_pkg(fast)
+# Loading work.clic_apb(fast)
+# Loading work.apb_to_reg_v2(fast)
+# Loading work.cf_math_pkg(fast)
+# Loading work.clicvs_reg_pkg(fast)
+# Loading work.clicintv_reg_pkg(fast)
+# Loading work.clicint_reg_pkg(fast)
+# Loading work.mclic_reg_pkg(fast)
+# Loading work.clic(fast)
+# Loading work.clic_gateway(fast)
+# Loading work.clic_target(fast)
+# Loading work.mclic_reg_top(fast)
+# Loading work.prim_subreg(fast__3)
+# Loading work.clicint_reg_top(fast)
+# Loading work.prim_subreg(fast__4)
+# Loading work.prim_subreg(fast__5)
+# Loading work.clicint_reg_top(fast__1)
+# Loading work.clicint_reg_top(fast__2)
+# Loading work.clicint_reg_top(fast__3)
+# Loading work.clicint_reg_top(fast__4)
+# Loading work.clicint_reg_top(fast__5)
+# Loading work.clicint_reg_top(fast__6)
+# Loading work.clicint_reg_top(fast__7)
+# Loading work.clicint_reg_top(fast__8)
+# Loading work.clicint_reg_top(fast__9)
+# Loading work.clicint_reg_top(fast__10)
+# Loading work.clicint_reg_top(fast__11)
+# Loading work.clicint_reg_top(fast__12)
+# Loading work.clicint_reg_top(fast__13)
+# Loading work.clicint_reg_top(fast__14)
+# Loading work.clicint_reg_top(fast__15)
+# Loading work.clic_reg_adapter(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# ** Warning: (vsim-3838) Variable '/tb_top_with_core/apb_bus_if/penable' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See ./vip/apb/apb_if.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_with_core File: ./tb/tb_top_with_core.sv Line: 56
+# ** Warning: (vsim-3838) Variable '/tb_top_with_core/apb_bus_if/psel' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See ./vip/apb/apb_if.sv(17).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_with_core File: ./tb/tb_top_with_core.sv Line: 55
+# ** Warning: (vsim-3838) Variable '/tb_top_with_core/apb_bus_if/pwrite' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See ./vip/apb/apb_if.sv(19).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_with_core File: ./tb/tb_top_with_core.sv Line: 54
+# ** Warning: (vsim-3838) Variable '/tb_top_with_core/apb_bus_if/pwdata' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See ./vip/apb/apb_if.sv(21).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_with_core File: ./tb/tb_top_with_core.sv Line: 52
+# ** Warning: (vsim-3838) Variable '/tb_top_with_core/apb_bus_if/paddr' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See ./vip/apb/apb_if.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_with_core File: ./tb/tb_top_with_core.sv Line: 51
+# Loading E:/questasim64_10.7c/uvm-1.1d\win64\uvm_dpi.dll
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(215) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(216) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test soc_stability_test...
+# ** Warning: (vsim-8360) The if/case statement is not unique.
+#    Time: 0 ps  Iteration: 0  Process: /tb_top_with_core/u_soc_top/u_periph_subsys/u_clint/i_clic/#ALWAYS#586(clic_addr_decode) File: ./dut/peripherals/Peripherals/CLINT/clic.sv Line: 595
+# ** Warning: (vsim-8360) The if/case statement is not unique.
+#    Time: 0 ps  Iteration: 1  Process: /tb_top_with_core/u_soc_top/u_periph_subsys/u_clint/i_clic/#ALWAYS#586(clic_addr_decode) File: ./dut/peripherals/Peripherals/CLINT/clic.sv Line: 595
+# ** Warning: (vsim-8360) The if/case statement is not unique.
+#    Time: 0 ps  Iteration: 2  Process: /tb_top_with_core/u_soc_top/u_periph_subsys/u_clint/i_clic/#ALWAYS#586(clic_addr_decode) File: ./dut/peripherals/Peripherals/CLINT/clic.sv Line: 595
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# -------------------------------------------------------------------
+# Name                       Type                         Size  Value
+# -------------------------------------------------------------------
+# uvm_test_top               soc_stability_test           -     @471 
+#   env                      subsystem_env                -     @478 
+#     apb_agent              apb_master_agent             -     @485 
+#       driver               apb_master_driver            -     @631 
+#         rsp_port           uvm_analysis_port            -     @646 
+#         seq_item_port      uvm_seq_item_pull_port       -     @638 
+#       monitor              apb_monitor                  -     @624 
+#         ap                 uvm_analysis_port            -     @764 
+#       sequencer            uvm_sequencer                -     @654 
+#         rsp_export         uvm_analysis_export          -     @661 
+#         seq_item_export    uvm_seq_item_pull_imp        -     @755 
+#         arbitration_queue  array                        0     -    
+#         lock_queue         array                        0     -    
+#         num_last_reqs      integral                     32    'd1  
+#         num_last_rsps      integral                     32    'd1  
+#     coverage               subsystem_coverage           -     @608 
+#       analysis_imp         uvm_analysis_imp             -     @615 
+#     scoreboard             subsystem_scoreboard         -     @492 
+#       ap_imp               uvm_analysis_imp             -     @778 
+#     v_sqr                  subsystem_virtual_sequencer  -     @499 
+#       rsp_export           uvm_analysis_export          -     @506 
+#       seq_item_export      uvm_seq_item_pull_imp        -     @600 
+#       arbitration_queue    array                        0     -    
+#       lock_queue           array                        0     -    
+#       num_last_reqs        integral                     32    'd1  
+#       num_last_rsps        integral                     32    'd1  
+# -------------------------------------------------------------------
+# 
+# UVM_INFO ./tests/subsystem_tests.sv(58) @ 0: uvm_test_top [STABILITY] === soc_stability_test: Multi-Cycle Execution Active (10us) ===
+# ** Warning: (vsim-8360) The if/case statement is not unique.
+#    Time: 0 ps  Iteration: 60  Process: /tb_top_with_core/u_soc_top/u_periph_subsys/u_clint/i_clic/#ALWAYS#586(clic_addr_decode) File: ./dut/peripherals/Peripherals/CLINT/clic.sv Line: 595
+# UVM_INFO ./env/subsystem_scoreboard.sv(88) @ 155000: uvm_test_top.env.scoreboard [SCB] WRITE: addr=0x00002180 data=0x000000c8
+# ** Error: SVA: dmem_awvalid dropped before awready handshake
+#    Time: 165 ns Started: 155 ns  Scope: tb_top_with_core.u_soc_top.u_core File: ./dut/core/rv32_core_top.sv Line: 604
+# ** Error: SVA: dmem_wvalid dropped before wready handshake
+#    Time: 165 ns Started: 155 ns  Scope: tb_top_with_core.u_soc_top.u_core File: ./dut/core/rv32_core_top.sv Line: 612
+# UVM_INFO ./tests/subsystem_tests.sv(60) @ 10000000: uvm_test_top [STABILITY] === soc_stability_test: PASS (Zero Deadlocks Observed) ===
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 10000000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ./env/subsystem_scoreboard.sv(117) @ 10000000: uvm_test_top.env.scoreboard [SCB] ============================================
+# UVM_INFO ./env/subsystem_scoreboard.sv(118) @ 10000000: uvm_test_top.env.scoreboard [SCB]         SCOREBOARD SUMMARY
+# UVM_INFO ./env/subsystem_scoreboard.sv(119) @ 10000000: uvm_test_top.env.scoreboard [SCB] ============================================
+# UVM_INFO ./env/subsystem_scoreboard.sv(120) @ 10000000: uvm_test_top.env.scoreboard [SCB]   Writes:      1
+# UVM_INFO ./env/subsystem_scoreboard.sv(121) @ 10000000: uvm_test_top.env.scoreboard [SCB]   Reads:       0
+# UVM_INFO ./env/subsystem_scoreboard.sv(122) @ 10000000: uvm_test_top.env.scoreboard [SCB]   Matches:     0
+# UVM_INFO ./env/subsystem_scoreboard.sv(123) @ 10000000: uvm_test_top.env.scoreboard [SCB]   Mismatches:  0
+# UVM_INFO ./env/subsystem_scoreboard.sv(124) @ 10000000: uvm_test_top.env.scoreboard [SCB] ============================================
+# UVM_INFO ./env/subsystem_scoreboard.sv(126) @ 10000000: uvm_test_top.env.scoreboard [SCB]   RESULT: *** PASS ***
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   17
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCB]    10
+# [STABILITY]     2
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : E:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 10 us  Iteration: 54  Instance: /tb_top_with_core
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at E:/questasim64_10.7c/win64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh line 430
+# ==========================================================
+#  Step 2: Merging Coverage Databases...
+# ==========================================================
+# QuestaSim-64 vcover 10.7c Coverage Utility 2018.08 Aug 18 2018
+# Start time: 18:38:08 on Nov 15,2026
+# vcover merge final_soc_coverage.ucdb soc_with_core.ucdb soc_stability.ucdb 
+# QuestaSim-64 vcover 10.7c Coverage Utility 2018.08 Aug 18 2018
+# Merging file soc_with_core.ucdb
+# Merging file soc_stability.ucdb
+# Writing merged result to final_soc_coverage.ucdb
+# 
+# End time: 18:38:08 on Nov 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ==========================================================
+#  Step 3: Generating HTML Coverage Report...
+# ==========================================================
+# QuestaSim-64 vcover 10.7c Coverage Utility 2018.08 Aug 18 2018
+# Start time: 18:38:08 on Nov 15,2026
+# vcover report -html -htmldir full_soc_cov_html -details final_soc_coverage.ucdb 
+# Report created in full_soc_cov_html/index.html
+# End time: 18:38:10 on Nov 15,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# ==========================================================
+#  Signoff Coverage Report Generated in: full_soc_cov_html/index.html
+#  All Gate G6 Signoff Tests Completed Successfully!
+# ==========================================================
