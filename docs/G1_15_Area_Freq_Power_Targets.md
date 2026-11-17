@@ -1,4 +1,4 @@
-# 1-TOPS VEDA — Area, Frequency and Power Targets
+[# 1-TOPS VEDA — Area, Frequency and Power Targets
 
 **G1 item 1.15 — Area, frequency and power targets stated**
 **Team:** VEDA · PSG College of Technology
@@ -213,3 +213,4 @@ Even these numbers overstate reality — they assume uniform-random switching ac
 | A-6 | Set and record agreed numerical targets for dynamic and leakage power at 100 MHz | Coach + VEDA | P1 |
 
 ---
+](https://onedrive.live.com/:p:/g/personal/0bc1b63ed77cf6dd/IQDfnGpEP_cTQaZA6cjA7LRVAfoUwdvxEbt1MuvVhji2_B0?rtime=AXaH_IlE30g&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3AvYy8wYmMxYjYzZWQ3N2NmNmRkL0lRRGZuR3BFUF9jVFFhWkE2Y2pBN0xSVkFmb1V3ZHZ4RWJ0MU11dlZoamkyX0IwP2U9MXliOU8x)
