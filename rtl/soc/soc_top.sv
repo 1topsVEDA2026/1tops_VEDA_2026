@@ -8,11 +8,13 @@
 //   3. AXI4 Data Memory Slave (DMEM / Internal RAM)
 //   4. AXI4-to-APB Bridge (Interconnect to Peripherals)
 //   5. Peripheral Subsystem (GPIO, UART, SPI, Timer, Watchdog, PLIC, CLINT)
+//   6. Ascon AEAD Hardware Accelerator (AXI4-Lite Slave)
 //
 // Memory Map:
 //   0x0000_0000 – 0x0000_0FFF : Instruction Memory (IMEM) — AXI4 Read-only
 //   0x0000_1000 – 0x0000_1FFF : Data Memory (DMEM/RAM)    — AXI4 R/W
-//   0x0000_2000 – 0x0000_FFFF : Peripheral Subsystem       — via AXI4-to-APB bridge
+//   0x0000_2000 – 0x0000_8FFF : Peripheral Subsystem       — via AXI4-to-APB bridge
+//   0x0000_9000 – 0x0000_907F : Ascon Accelerator          — AXI4-Lite Direct
 //
 // Peripheral Sub-Map (relative to 0x0000_2000):
 //   +0x0000 – +0x0FFF : UART    (Slot 0)
@@ -53,6 +55,17 @@ module soc_top (
     // Watchdog
     // ====================================================================
     output logic        wdt_reset_o,
+
+    // ====================================================================
+    // Ascon Accelerator Outputs
+    // ====================================================================
+    output wire [39:0]  ascon_cipher_text_o,
+    output wire [127:0] ascon_tag_o,
+    output wire [39:0]  ascon_dec_plain_text_o,
+    output wire [127:0] ascon_dec_tag_o,
+    output wire         ascon_enc_ready_o,
+    output wire         ascon_dec_ready_o,
+    output wire         ascon_msg_auth_o,
 
     // ====================================================================
     // APB Bus Monitoring Interface (for UVM Passive Monitor)
@@ -116,15 +129,22 @@ module soc_top (
     logic [ 1:0] dmem_rresp;
 
     // ====================================================================
-    // 3. Address Demux — RAM vs Peripheral Bridge
+    // 3. Address Demux — RAM vs Peripheral Bridge vs Ascon (3-way)
     // ====================================================================
-    // Peripheral region: address >= 0x0000_2000
-    logic is_periph_wr, is_periph_rd, is_periph_req;
-    assign is_periph_wr  = (dmem_awaddr >= 32'h0000_2000);
-    assign is_periph_rd  = (dmem_araddr >= 32'h0000_2000);
-    // Use write address for write transactions, read address for read
-    assign is_periph_req = (dmem_awvalid && is_periph_wr) ||
-                           (dmem_arvalid && is_periph_rd && !dmem_awvalid);
+    // Address regions:
+    //   < 0x2000          : RAM (DMEM)
+    //   >= 0x2000, < 0x9000 : Peripheral Subsystem (APB Bridge)
+    //   >= 0x9000          : Ascon Accelerator (AXI4-Lite)
+    logic is_periph_wr, is_periph_rd;
+    logic is_ascon_wr,  is_ascon_rd;
+    logic is_ram_wr,    is_ram_rd;
+
+    assign is_ascon_wr  = (dmem_awaddr >= 32'h0000_9000);
+    assign is_ascon_rd  = (dmem_araddr >= 32'h0000_9000);
+    assign is_periph_wr = (dmem_awaddr >= 32'h0000_2000) && !is_ascon_wr;
+    assign is_periph_rd = (dmem_araddr >= 32'h0000_2000) && !is_ascon_rd;
+    assign is_ram_wr    = !is_periph_wr && !is_ascon_wr;
+    assign is_ram_rd    = !is_periph_rd && !is_ascon_rd;
 
     // RAM AXI Slave Signals
     logic        ram_awready, ram_wready, ram_bvalid;
@@ -142,41 +162,48 @@ module soc_top (
     logic [ 1:0] brg_rresp;
     logic        brg_rlast;
 
-    // Response Mux: select based on which slave was addressed
-    // Use a registered flag to remember which slave was targeted
-    logic periph_wr_active, periph_rd_active;
+    // Ascon AXI Slave Signals
+    logic        asc_awready, asc_wready, asc_bvalid;
+    logic [ 1:0] asc_bresp;
+    logic        asc_arready, asc_rvalid;
+    logic [31:0] asc_rdata;
+    logic [ 1:0] asc_rresp;
+
+    // Response Mux: registered flags to remember which slave was targeted
+    // 2-bit encoding: 00=RAM, 01=Periph, 10=Ascon
+    logic [1:0] wr_target, rd_target;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            periph_wr_active <= 1'b0;
-            periph_rd_active <= 1'b0;
+            wr_target <= 2'b00;
+            rd_target <= 2'b00;
         end else begin
             // Latch on write address handshake
             if (dmem_awvalid && dmem_awready)
-                periph_wr_active <= is_periph_wr;
+                wr_target <= is_ascon_wr ? 2'b10 : (is_periph_wr ? 2'b01 : 2'b00);
             else if (dmem_bvalid && dmem_bready)
-                periph_wr_active <= 1'b0;
+                wr_target <= 2'b00;
 
             // Latch on read address handshake
             if (dmem_arvalid && dmem_arready)
-                periph_rd_active <= is_periph_rd;
+                rd_target <= is_ascon_rd ? 2'b10 : (is_periph_rd ? 2'b01 : 2'b00);
             else if (dmem_rvalid && dmem_rready)
-                periph_rd_active <= 1'b0;
+                rd_target <= 2'b00;
         end
     end
 
     // Write channel demux
-    assign dmem_awready = is_periph_wr ? brg_awready : ram_awready;
-    assign dmem_wready  = is_periph_wr ? brg_wready  : ram_wready;
-    assign dmem_bvalid  = periph_wr_active ? brg_bvalid  : ram_bvalid;
-    assign dmem_bresp   = periph_wr_active ? brg_bresp   : ram_bresp;
+    assign dmem_awready = is_ascon_wr ? asc_awready : (is_periph_wr ? brg_awready : ram_awready);
+    assign dmem_wready  = is_ascon_wr ? asc_wready  : (is_periph_wr ? brg_wready  : ram_wready);
+    assign dmem_bvalid  = (wr_target == 2'b10) ? asc_bvalid  : ((wr_target == 2'b01) ? brg_bvalid  : ram_bvalid);
+    assign dmem_bresp   = (wr_target == 2'b10) ? asc_bresp   : ((wr_target == 2'b01) ? brg_bresp   : ram_bresp);
 
     // Read channel demux
-    assign dmem_arready = is_periph_rd ? brg_arready : ram_arready;
-    assign dmem_rvalid  = periph_rd_active ? brg_rvalid  : ram_rvalid;
-    assign dmem_rdata   = periph_rd_active ? brg_rdata   : ram_rdata;
-    assign dmem_rresp   = periph_rd_active ? brg_rresp   : ram_rresp;
-    assign dmem_rlast   = periph_rd_active ? brg_rlast   : ram_rlast;
+    assign dmem_arready = is_ascon_rd ? asc_arready : (is_periph_rd ? brg_arready : ram_arready);
+    assign dmem_rvalid  = (rd_target == 2'b10) ? asc_rvalid  : ((rd_target == 2'b01) ? brg_rvalid  : ram_rvalid);
+    assign dmem_rdata   = (rd_target == 2'b10) ? asc_rdata   : ((rd_target == 2'b01) ? brg_rdata   : ram_rdata);
+    assign dmem_rresp   = (rd_target == 2'b10) ? asc_rresp   : ((rd_target == 2'b01) ? brg_rresp   : ram_rresp);
+    assign dmem_rlast   = (rd_target == 2'b10) ? asc_rvalid  : ((rd_target == 2'b01) ? brg_rlast   : ram_rlast);
 
     // ====================================================================
     // 4. Interrupt Wires
@@ -479,6 +506,59 @@ module soc_top (
         .clint_irq_level_o (/* unused */),
         .clint_irq_shv_o   (/* unused */),
         .clint_irq_priv_o  (/* unused */)
+    );
+
+    // ====================================================================
+    // 10. Ascon AEAD Hardware Accelerator (AXI4-Lite Slave)
+    // ====================================================================
+    // Address range: 0x0000_9000 – 0x0000_907F (128 bytes, 32 registers)
+    // The AXI4-Lite slave wrapper internally instantiates the Ascon core
+    // (Encryption + Decryption) with Radix permutation.
+    ascon_axi #(
+        .C_S00_AXI_DATA_WIDTH (32),
+        .C_S00_AXI_ADDR_WIDTH (7)
+    ) u_ascon (
+        // Clock & Reset
+        .s00_axi_aclk    (clk),
+        .s00_axi_aresetn (rst_n),
+
+        // AXI4-Lite Write Address Channel
+        .s00_axi_awaddr  (dmem_awaddr[6:0]),
+        .s00_axi_awprot  (dmem_awprot),
+        .s00_axi_awvalid (dmem_awvalid & is_ascon_wr),
+        .s00_axi_awready (asc_awready),
+
+        // AXI4-Lite Write Data Channel
+        .s00_axi_wdata   (dmem_wdata),
+        .s00_axi_wstrb   (dmem_wstrb),
+        .s00_axi_wvalid  (dmem_wvalid & (is_ascon_wr | (wr_target == 2'b10))),
+        .s00_axi_wready  (asc_wready),
+
+        // AXI4-Lite Write Response Channel
+        .s00_axi_bresp   (asc_bresp),
+        .s00_axi_bvalid  (asc_bvalid),
+        .s00_axi_bready  (dmem_bready),
+
+        // AXI4-Lite Read Address Channel
+        .s00_axi_araddr  (dmem_araddr[6:0]),
+        .s00_axi_arprot  (dmem_arprot),
+        .s00_axi_arvalid (dmem_arvalid & is_ascon_rd),
+        .s00_axi_arready (asc_arready),
+
+        // AXI4-Lite Read Data Channel
+        .s00_axi_rdata   (asc_rdata),
+        .s00_axi_rresp   (asc_rresp),
+        .s00_axi_rvalid  (asc_rvalid),
+        .s00_axi_rready  (dmem_rready),
+
+        // Ascon Output Ports
+        .cipher_text_o            (ascon_cipher_text_o),
+        .tag_o                    (ascon_tag_o),
+        .dec_plain_text_o         (ascon_dec_plain_text_o),
+        .dec_tag_o                (ascon_dec_tag_o),
+        .encryption_ready_o       (ascon_enc_ready_o),
+        .decryption_ready_o       (ascon_dec_ready_o),
+        .message_authentication_o (ascon_msg_auth_o)
     );
 
 endmodule
